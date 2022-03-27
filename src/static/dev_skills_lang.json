@@ -1,0 +1,22 @@
+[
+	{"logo": "Clojure", "name": "Clojure", "color": "5881D8"},
+	{"logo": "C", "name": "C", "color": "#A8B9CC"},
+	{"logo": "Cplusplus", "name": "C++", "color": "00599C"},
+	{"logo": "CSharp", "name": "C#", "color": "A078DB"},
+	{"logo": "Dart", "name": "Dart", "color": "0175C2"},
+	{"logo": "Elixir", "name": "Elixir", "color": "4B275F"},
+	{"logo": "Go", "name": "Go", "color": "00ADD8"},
+	{"logo": "Java", "name": "Java", "color": "007396"},
+	{"logo": "Javascript", "name": "Javascript", "color": "F7DF1E"},
+	{"logo": "Kotlin", "name": "Kotlin", "color": "7F52FF"},
+	{"logo": "", "name": "Objective-C", "color": "F1592A"},
+	{"logo": "Perl", "name": "Perl", "color": "39457E"},
+	{"logo": "PHP", "name": "PHP", "color": "777BB4"},
+	{"logo": "Python", "name": "Python", "color": "3776AB"},
+	{"logo": "R", "name": "R", "color": "276DC3"},
+	{"logo": "Ruby", "name": "Ruby", "color": "CC342D"},
+	{"logo": "Rust", "name": "Rust", "color": "000000"},
+	{"logo": "Scala", "name": "Scala", "color": "DC322F"},
+	{"logo": "Swift", "name": "Swift", "color": "F05138"},
+	{"logo": "Typescript", "name": "Typescript", "color": "3178C6"}
+]
