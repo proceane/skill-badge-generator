@@ -7,7 +7,7 @@ const methods = {
       + "-"
       + skillList[key]['color']
       + "?style=flat-square&logo="
-      + skillList[key]['name']
+      + skillList[key]['logo']
       + "&logoColor=white\">\n");
     }
     return result
