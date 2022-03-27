@@ -1,17 +1,11 @@
 <template>
   <v-row>
     <v-checkbox
+      v-for="item in frontSkillList"
+      :key="item.skill"
+      :label="item.skill"
       v-model="skillList"
-      label="Vue.js"
-      v-bind:value="{'name': 'Vue.js', 'color': '41b883'}"
-      hide-details
-      @change="onChange"
-    >
-    </v-checkbox>
-    <v-checkbox
-      v-model="skillList"
-      label="React"
-      v-bind:value="{'name': 'React', 'color': '61dafb'}"
+      v-bind:value="{'logo': item.logo, 'name': item.skill, 'color': item.color}"
       hide-details
       @change="onChange"
     >
@@ -21,10 +15,13 @@
 
 <script>
 
+import frontSkillList from "../static/dev_skills_front.json";
+
 export default {
   name: "SkillCheckBox",
   data: () => ({
     skillList: [],
+    frontSkillList: frontSkillList,
   }),
   methods: {
     onChange() {
