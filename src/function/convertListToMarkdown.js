@@ -10,6 +10,7 @@ const methods = {
       + skillList[key]['logo']
       + "&logoColor=white\">\n");
     }
+    result += "<br>";
     return result
   }
 }
