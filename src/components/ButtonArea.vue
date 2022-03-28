@@ -21,12 +21,12 @@
           <v-container>
             <v-row>
               <code lang="markdown">
-                {{skillList}}
+                {{langSkillList}}
               </code>
             </v-row>
             <v-row>
               <code lang="markdown">
-                {{langSkillList}}
+                {{skillList}}
               </code>
             </v-row>
           </v-container>
