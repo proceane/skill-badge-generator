@@ -24,6 +24,11 @@
                 {{skillList}}
               </code>
             </v-row>
+            <v-row>
+              <code lang="markdown">
+                {{langSkillList}}
+              </code>
+            </v-row>
           </v-container>
         </v-card-text>
         <v-card-actions>
@@ -49,7 +54,10 @@ export default {
   props: {
     skillList: {
       type: String
-    }
+    },
+    langSkillList: {
+      type: String
+    },
   },
 }
 </script>
