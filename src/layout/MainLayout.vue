@@ -1,16 +1,26 @@
 <template>
   <v-row>
     <v-col cols="12" lg="6">
-      <ButtonArea :skillList="frontMarkdownSkillList" :langSkillList="langMarkdownSkillList"/>
+      <ButtonArea 
+        :langSkillList="langMarkdownSkillList"
+        :frontSkillList="frontMarkdownSkillList" 
+        :backSkillList="backMarkdownSkillList"
+      />
       <SelectArea 
         @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
         @sendFrontMarkdownSkillList="sendFrontSkillListToGenerate"
         @sendLangHtmlSkillList="sendLangSkillListToPreview"
         @sendLangMarkdownSkillList="sendLangSkillListToGenerate"
+        @sendBackHtmlSkillList="sendBackSkillListToPreview"
+        @sendBackMarkdownSkillList="sendBackSkillListToGenerate"
       />
     </v-col>
     <v-col cols="12" lg="6">
-      <PreviewArea :frontSkillList="frontHtmlSkillList" :langSkillList="langHtmlSkillList"/>
+      <PreviewArea 
+        :langSkillList="langHtmlSkillList" 
+        :frontSkillList="frontHtmlSkillList" 
+        :backSkillList="backHtmlSkillList"
+      />
     </v-col>
   </v-row>
 </template>
@@ -28,23 +38,31 @@ export default {
     PreviewArea,
   },
   data: () => ({
-    frontHtmlSkillList: null,
-    frontMarkdownSkillList: null,
     langHtmlSkillList: null,
     langMarkdownSkillList: null,
+    frontHtmlSkillList: null,
+    frontMarkdownSkillList: null,
+    backHtmlSkillList: null,
+    backMarkdownSkillList: null,
   }),
   methods: {
+    sendLangSkillListToPreview(skillList) {
+      this.langHtmlSkillList = skillList;
+    },
+    sendLangSkillListToGenerate(skillList) {
+      this.langMarkdownSkillList = skillList;
+    },
     sendFrontSkillListToPreview(skillList) {
       this.frontHtmlSkillList = skillList;
     },
     sendFrontSkillListToGenerate(skillList) {
       this.frontMarkdownSkillList = skillList;
     },
-    sendLangSkillListToPreview(skillList) {
-      this.langHtmlSkillList = skillList;
+    sendBackSkillListToPreview(skillList) {
+      this.backHtmlSkillList = skillList;
     },
-    sendLangSkillListToGenerate(skillList) {
-      this.langMarkdownSkillList = skillList;
+    sendBackSkillListToGenerate(skillList) {
+      this.backMarkdownSkillList = skillList;
     }
   }
 }
