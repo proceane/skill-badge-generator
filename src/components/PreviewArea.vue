@@ -11,6 +11,11 @@
       <h3 class="mb-2">Front-End</h3>
       <div id="front-end-preview-area" v-html="frontSkillList">
       </div>
+
+      <br>
+      <h3 class="mb-2">Back-End</h3>
+      <div id="back-end-preview-area" v-html="backSkillList">
+      </div>
     </v-card-text>
     
   </v-card>
@@ -25,6 +30,9 @@ export default {
     frontSkillList: {
       type: String
     },
+    backSkillList: {
+      type: String
+    }
   },
 }
 </script>
