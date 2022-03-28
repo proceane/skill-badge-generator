@@ -3,14 +3,13 @@
     <v-card-title>Preview</v-card-title>
 
     <v-card-text>
-      <h3>Language</h3>
-      <br>
+      <h3 class="mb-2">Language</h3>
       <div id="language-preview-area" v-html="langSkillList">
       </div>
 
-      <h3>Front-End</h3>
       <br>
-      <div id="front-end-preview-area" v-html="skillList">
+      <h3 class="mb-2">Front-End</h3>
+      <div id="front-end-preview-area" v-html="frontSkillList">
       </div>
     </v-card-text>
     
@@ -20,10 +19,10 @@
 <script>
 export default {
   props: {
-    skillList: {
+    langSkillList: {
       type: String
     },
-    langSkillList: {
+    frontSkillList: {
       type: String
     },
   },

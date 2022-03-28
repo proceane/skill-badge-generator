@@ -1,16 +1,16 @@
 <template>
   <v-row>
     <v-col cols="12" lg="6">
-      <ButtonArea :skillList="markdownSkillList" :langSkillList="langMarkdownSkillList"/>
+      <ButtonArea :skillList="frontMarkdownSkillList" :langSkillList="langMarkdownSkillList"/>
       <SelectArea 
-        @sendHtmlSkillList="sendSkillListToPreview" 
-        @sendMarkdownSkillList="sendSkillListToGenerate"
-        @sendHtmlLangSkillList="sendLangSkillListToPreview"
-        @sendMarkdownLangSkillList="sendLangSkillListToGenerate"
+        @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
+        @sendFrontMarkdownSkillList="sendFrontSkillListToGenerate"
+        @sendLangHtmlSkillList="sendLangSkillListToPreview"
+        @sendLangMarkdownSkillList="sendLangSkillListToGenerate"
       />
     </v-col>
     <v-col cols="12" lg="6">
-      <PreviewArea :skillList="htmlSkillList" :langSkillList="langHtmlSkillList"/>
+      <PreviewArea :frontSkillList="frontHtmlSkillList" :langSkillList="langHtmlSkillList"/>
     </v-col>
   </v-row>
 </template>
@@ -28,17 +28,17 @@ export default {
     PreviewArea,
   },
   data: () => ({
-    htmlSkillList: null,
-    markdownSkillList: null,
+    frontHtmlSkillList: null,
+    frontMarkdownSkillList: null,
     langHtmlSkillList: null,
     langMarkdownSkillList: null,
   }),
   methods: {
-    sendSkillListToPreview(skillList) {
-      this.htmlSkillList = skillList;
+    sendFrontSkillListToPreview(skillList) {
+      this.frontHtmlSkillList = skillList;
     },
-    sendSkillListToGenerate(skillList) {
-      this.markdownSkillList = skillList;
+    sendFrontSkillListToGenerate(skillList) {
+      this.frontMarkdownSkillList = skillList;
     },
     sendLangSkillListToPreview(skillList) {
       this.langHtmlSkillList = skillList;

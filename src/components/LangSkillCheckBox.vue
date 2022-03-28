@@ -25,7 +25,7 @@ export default {
   }),
   methods: {
     onChange() {
-      this.$emit('selectSkillList', this.skillList);
+      this.$emit('selectLangSkillList', this.skillList);
     },
   },
 }

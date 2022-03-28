@@ -18,14 +18,14 @@
 import frontSkillList from "../static/dev_skills_front.json";
 
 export default {
-  name: "SkillCheckBox",
+  name: "FrontSkillCheckBox",
   data: () => ({
     skillList: [],
     frontSkillList: frontSkillList,
   }),
   methods: {
     onChange() {
-      this.$emit('selectSkillList', this.skillList);
+      this.$emit('selectFrontSkillList', this.skillList);
     },
   },
 }

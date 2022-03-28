@@ -26,7 +26,7 @@
             </v-row>
             <v-row>
               <code lang="markdown">
-                {{skillList}}
+                {{frontSkillList}}
               </code>
             </v-row>
           </v-container>
@@ -52,10 +52,10 @@ export default {
     dialog: false,
   }),
   props: {
-    skillList: {
+    langSkillList: {
       type: String
     },
-    langSkillList: {
+    frontSkillList: {
       type: String
     },
   },
