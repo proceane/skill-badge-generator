@@ -19,14 +19,19 @@
         </v-card-title>
         <v-card-text>
           <v-container>
-            <v-row>
+            <v-row v-if="langSkillList">
               <code lang="markdown">
                 {{langSkillList}}
               </code>
             </v-row>
-            <v-row>
+            <v-row v-if="frontSkillList">
               <code lang="markdown">
                 {{frontSkillList}}
+              </code>
+            </v-row>
+            <v-row v-if="backSkillList">
+              <code lang="markdown">
+                {{backSkillList}}
               </code>
             </v-row>
           </v-container>
@@ -56,6 +61,9 @@ export default {
       type: String
     },
     frontSkillList: {
+      type: String
+    },
+    backSkillList: {
       type: String
     },
   },
