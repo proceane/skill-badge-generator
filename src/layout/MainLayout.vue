@@ -5,6 +5,7 @@
         :langSkillList="langMarkdownSkillList"
         :frontSkillList="frontMarkdownSkillList" 
         :backSkillList="backMarkdownSkillList"
+        :dbSkillList="dbMarkdownSKillList"
       />
       <SelectArea 
         @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
@@ -13,6 +14,8 @@
         @sendLangMarkdownSkillList="sendLangSkillListToGenerate"
         @sendBackHtmlSkillList="sendBackSkillListToPreview"
         @sendBackMarkdownSkillList="sendBackSkillListToGenerate"
+        @sendDbHtmlSkillList="sendDbSkillListToPreview"
+        @sendDbMarkdownSkillList="sendDbSkillListToGenerate"
       />
     </v-col>
     <v-col cols="12" lg="6">
@@ -20,6 +23,7 @@
         :langSkillList="langHtmlSkillList" 
         :frontSkillList="frontHtmlSkillList" 
         :backSkillList="backHtmlSkillList"
+        :dbSkillList="dbHtmlSkillList"
       />
     </v-col>
   </v-row>
@@ -44,6 +48,8 @@ export default {
     frontMarkdownSkillList: null,
     backHtmlSkillList: null,
     backMarkdownSkillList: null,
+    dbHtmlSkillList: null,
+    dbMarkdownSKillList: null,
   }),
   methods: {
     sendLangSkillListToPreview(skillList) {
@@ -63,7 +69,13 @@ export default {
     },
     sendBackSkillListToGenerate(skillList) {
       this.backMarkdownSkillList = skillList;
-    }
+    },
+    sendDbSkillListToPreview(skillList) {
+      this.dbHtmlSkillList = skillList;
+    },
+    sendDbSkillListToGenerate(skillList) {
+      this.dbMarkdownSKillList = skillList;
+    },
   }
 }
 </script>
