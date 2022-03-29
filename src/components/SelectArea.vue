@@ -26,6 +26,14 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
+      <v-expansion-panel class="">
+        <v-expansion-panel-header>Database</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-container fluid>
+              <DbSkillCheckBox @selectDbSkillList="sendDbSkillList"/>
+          </v-container>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
     </v-expansion-panels>
   </v-row>
 </template>
@@ -34,6 +42,7 @@
 import FrontSkillCheckBox from './FrontSkillCheckBox';
 import LangSkillCheckBox from './LangSkillCheckBox';
 import BackSkillCheckBox from './BackSkillCheckBox';
+import DbSkillCheckBox from './DbSkillCheckBox';
 import listToHtml from '../function/convertListToHtml';
 import listToMarkdown from '../function/convertListToMarkdown';
 
@@ -42,6 +51,7 @@ export default {
     FrontSkillCheckBox,
     LangSkillCheckBox,
     BackSkillCheckBox,
+    DbSkillCheckBox,
   },
   methods: {
     sendFrontSkillList(skillList) {
@@ -55,7 +65,11 @@ export default {
     sendBackSkillList(skillList) {
       this.$emit('sendBackHtmlSkillList', listToHtml(skillList));
       this.$emit('sendBackMarkdownSkillList', listToMarkdown(skillList));
-    }
+    },
+    sendDbSkillList(skillList) {
+      this.$emit('sendDbHtmlSkillList', listToHtml(skillList));
+      this.$emit('sendFrontMarkdownSkillList', listToMarkdown(skillList));
+    },
   },
 }
 </script>
