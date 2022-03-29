@@ -16,6 +16,11 @@
       <h3 class="mb-2">Back-End</h3>
       <div id="back-end-preview-area" v-html="backSkillList">
       </div>
+
+      <br>
+      <h3 class="mb-2">Database</h3>
+      <div id="database-preview-area" v-html="dbSkillList">
+      </div>
     </v-card-text>
     
   </v-card>
@@ -32,7 +37,10 @@ export default {
     },
     backSkillList: {
       type: String
-    }
+    },
+    dbSkillList: {
+      type: String
+    },
   },
 }
 </script>
