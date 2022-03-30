@@ -31,6 +31,11 @@
       <h3 class="mb-2">DevOps</h3>
       <div id="devOps-preview-area" v-html="devOpsSkillList">
       </div>
+
+      <br>
+      <h3 class="mb-2">Collaborate</h3>
+      <div id="collabo-preview-area" v-html="collaboSkillList">
+      </div>
     </v-card-text>
     
   </v-card>
@@ -55,6 +60,9 @@ export default {
       type: String
     },
     devOpsSkillList: {
+      type: String
+    },
+    collaboSkillList: {
       type: String
     },
   },
