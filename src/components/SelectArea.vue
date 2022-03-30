@@ -50,6 +50,14 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
+      <v-expansion-panel class="">
+        <v-expansion-panel-header>Collaborate</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-container fluid>
+              <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList"/>
+          </v-container>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
     </v-expansion-panels>
   </v-row>
 </template>
@@ -61,6 +69,7 @@ import BackSkillCheckBox from './BackSkillCheckBox';
 import DbSkillCheckBox from './DbSkillCheckBox';
 import MobileSkillCheckBox from './MobileSkillCheckBox';
 import DevOpsSkillCheckBox from './DevOpsSkillCheckBox';
+import CollaboSkillCheckBox from './CollaboSkillCheckBox';
 
 import listToHtml from '../function/convertListToHtml';
 import listToMarkdown from '../function/convertListToMarkdown';
@@ -73,6 +82,7 @@ export default {
     DbSkillCheckBox,
     MobileSkillCheckBox,
     DevOpsSkillCheckBox,
+    CollaboSkillCheckBox,
   },
   methods: {
     sendFrontSkillList(skillList) {
@@ -98,6 +108,10 @@ export default {
     sendDevOpsSkillList(skillList) {
       this.$emit('sendDevOpsHtmlSkillList', listToHtml(skillList));
       this.$emit('sendDevOpsMarkdownSkillList', listToMarkdown(skillList));
+    },
+    sendCollaboSkillList(skillList) {
+      this.$emit('sendCollaboHtmlSkillList', listToHtml(skillList));
+      this.$emit('sendCollaboMarkdownSkillList', listToMarkdown(skillList));
     }
   },
 }
