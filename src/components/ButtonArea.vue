@@ -49,6 +49,11 @@
                 {{devOpsSkillList}}
               </code>
             </v-row>
+            <v-row v-if="collaboSkillList">
+              <code lang="markdown">
+                {{collaboSkillList}}
+              </code>
+            </v-row>
           </v-container>
         </v-card-text>
         <v-card-actions>
@@ -88,6 +93,9 @@ export default {
       type: String
     },
     devOpsSkillList: {
+      type: String
+    },
+    collaboSkillList: {
       type: String
     },
   },
