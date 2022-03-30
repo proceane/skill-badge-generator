@@ -8,6 +8,7 @@
         :dbSkillList="dbMarkdownSKillList"
         :mobileSkillList="mobileMarkdownSKillList"
         :devOpsSkillList="devOpsMarkdownSkillList"
+        :collaboSkillList="collaboMarkdownSkillList"
       />
       <SelectArea 
         @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
@@ -22,6 +23,8 @@
         @sendMobileMarkdownSkillList="sendMobileSkillListToGenerate"
         @sendDevOpsHtmlSkillList="sendDevOpsSkillListToPreview"
         @sendDevOpsMarkdownSkillList="sendDevOpsSkillListToGenerate"
+        @sendCollaboHtmlSkillList="sendCollaboSkillListToPreview"
+        @sendCollaboMarkdownSkillList="sendCollaboSkillListToGenerate"
       />
     </v-col>
     <v-col cols="12" lg="6">
@@ -32,6 +35,7 @@
         :dbSkillList="dbHtmlSkillList"
         :mobileSkillList="mobileHtmlSkillList"
         :devOpsSkillList="devOpsHtmlSkillList"
+        :collaboSkillList="collaboHtmlSkillList"
       />
     </v-col>
   </v-row>
@@ -62,6 +66,8 @@ export default {
     mobileMarkdownSkillList: null,
     devOpsHtmlSkillList: null,
     devOpsMarkdownSkillList: null,
+    collaboHtmlSkillList: null,
+    collaboMarkdownSkillList: null,
   }),
   methods: {
     sendLangSkillListToPreview(skillList) {
@@ -99,6 +105,12 @@ export default {
     },
     sendDevOpsSkillListToGenerate(skillList) {
       this.devOpsMarkdownSkillList = skillList;
+    },
+    sendCollaboSkillListToPreview(skillList) {
+      this.collaboHtmlSkillList = skillList;
+    },
+    sendCollaboSkillListToGenerate(skillList) {
+      this.collaboMarkdownSkillList = skillList;
     },
   }
 }
