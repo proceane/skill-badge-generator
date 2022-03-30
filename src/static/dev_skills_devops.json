@@ -22,7 +22,7 @@
 	{"logo": "Helm", "skill": "Helm", "color": "0F1689"},
 	{"logo": "", "skill": "Jaeger", "color": "60D0E4"},
 	{"logo": "Jenkins", "skill": "Jenkins", "color": "D24939"},
-	{"logo": "", "skill": "Kube-Bench", "color": "1904DA"},
+	{"logo": "", "skill": "Kube Bench", "color": "1904DA"},
 	{"logo": "Kubernetes", "skill": "Kubernetes", "color": "326CE5"},
 	{"logo": "Linkerd", "skill": "Linkerd", "color": "2BEDA7"},
 	{"logo": "", "skill": "Nexus", "color": "2D669A"},
