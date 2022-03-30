@@ -27,6 +27,14 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel class="">
+        <v-expansion-panel-header>Mobile</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-container fluid>
+              <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList"/>
+          </v-container>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel class="">
         <v-expansion-panel-header>Database</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -43,6 +51,8 @@ import FrontSkillCheckBox from './FrontSkillCheckBox';
 import LangSkillCheckBox from './LangSkillCheckBox';
 import BackSkillCheckBox from './BackSkillCheckBox';
 import DbSkillCheckBox from './DbSkillCheckBox';
+import MobileSkillCheckBox from './MobileSkillCheckBox';
+
 import listToHtml from '../function/convertListToHtml';
 import listToMarkdown from '../function/convertListToMarkdown';
 
@@ -52,6 +62,7 @@ export default {
     LangSkillCheckBox,
     BackSkillCheckBox,
     DbSkillCheckBox,
+    MobileSkillCheckBox,
   },
   methods: {
     sendFrontSkillList(skillList) {
@@ -68,8 +79,12 @@ export default {
     },
     sendDbSkillList(skillList) {
       this.$emit('sendDbHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendFrontMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendDbMarkdownSkillList', listToMarkdown(skillList));
     },
+    sendMobileSkillList(skillList) {
+      this.$emit('sendMobileHtmlSkillList', listToHtml(skillList));
+      this.$emit('sendMobileMarkdownSkillList', listToMarkdown(skillList));
+    }
   },
 }
 </script>
