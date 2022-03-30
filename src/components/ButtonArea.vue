@@ -44,6 +44,11 @@
                 {{dbSkillList}}
               </code>
             </v-row>
+            <v-row v-if="devOpsSkillList">
+              <code lang="markdown">
+                {{devOpsSkillList}}
+              </code>
+            </v-row>
           </v-container>
         </v-card-text>
         <v-card-actions>
@@ -80,6 +85,9 @@ export default {
       type: String
     },
     mobileSkillList: {
+      type: String
+    },
+    devOpsSkillList: {
       type: String
     },
   },
