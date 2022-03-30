@@ -26,6 +26,11 @@
       <h3 class="mb-2">Database</h3>
       <div id="database-preview-area" v-html="dbSkillList">
       </div>
+
+      <br>
+      <h3 class="mb-2">DevOps</h3>
+      <div id="devOps-preview-area" v-html="devOpsSkillList">
+      </div>
     </v-card-text>
     
   </v-card>
@@ -47,6 +52,9 @@ export default {
       type: String
     },
     mobileSkillList: {
+      type: String
+    },
+    devOpsSkillList: {
       type: String
     },
   },
