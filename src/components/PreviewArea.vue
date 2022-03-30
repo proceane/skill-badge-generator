@@ -18,6 +18,11 @@
       </div>
 
       <br>
+      <h3 class="mb-2">Mobile</h3>
+      <div id="mobile-preview-area" v-html="mobileSkillList">
+      </div>
+
+      <br>
       <h3 class="mb-2">Database</h3>
       <div id="database-preview-area" v-html="dbSkillList">
       </div>
@@ -39,6 +44,9 @@ export default {
       type: String
     },
     dbSkillList: {
+      type: String
+    },
+    mobileSkillList: {
       type: String
     },
   },
