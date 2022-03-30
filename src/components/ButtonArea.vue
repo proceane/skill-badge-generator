@@ -34,6 +34,11 @@
                 {{backSkillList}}
               </code>
             </v-row>
+            <v-row v-if="mobileSkillList">
+              <code lang="markdown">
+                {{mobileSkillList}}
+              </code>
+            </v-row>
             <v-row v-if="dbSkillList">
               <code lang="markdown">
                 {{dbSkillList}}
@@ -72,6 +77,9 @@ export default {
       type: String
     },
     dbSkillList: {
+      type: String
+    },
+    mobileSkillList: {
       type: String
     },
   },
