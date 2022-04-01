@@ -6,7 +6,7 @@
         <v-expansion-panel-header>Language</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <LangSkillCheckBox @selectLangSkillList="sendLangSkillList"/>
+              <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" ref="lang"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -14,7 +14,7 @@
         <v-expansion-panel-header>Front-End</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList"/>
+              <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList" ref="front"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -22,7 +22,7 @@
         <v-expansion-panel-header>Back-End</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <BackSkillCheckBox @selectBackSkillList="sendBackSkillList"/>
+              <BackSkillCheckBox @selectBackSkillList="sendBackSkillList" ref="back"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -30,7 +30,7 @@
         <v-expansion-panel-header>Mobile</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList"/>
+              <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList" ref="mobile"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -38,7 +38,7 @@
         <v-expansion-panel-header>Database</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <DbSkillCheckBox @selectDbSkillList="sendDbSkillList"/>
+              <DbSkillCheckBox @selectDbSkillList="sendDbSkillList" ref="database"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -46,7 +46,7 @@
         <v-expansion-panel-header>DevOps</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList"/>
+              <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList" ref="devOps"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -54,7 +54,7 @@
         <v-expansion-panel-header>Collaborate</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
-              <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList"/>
+              <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" ref="collabo"/>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -112,6 +112,15 @@ export default {
     sendCollaboSkillList(skillList) {
       this.$emit('sendCollaboHtmlSkillList', listToHtml(skillList));
       this.$emit('sendCollaboMarkdownSkillList', listToMarkdown(skillList));
+    },
+    executeResetCommand() {
+      this.$refs.lang.executeResetCommand();
+      this.$refs.front.executeResetCommand();
+      this.$refs.back.executeResetCommand();
+      this.$refs.mobile.executeResetCommand();
+      this.$refs.database.executeResetCommand();
+      this.$refs.devOps.executeResetCommand();
+      this.$refs.collabo.executeResetCommand();
     }
   },
 }
