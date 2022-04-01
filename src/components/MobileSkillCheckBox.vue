@@ -27,6 +27,9 @@ export default {
     onChange() {
       this.$emit('selectMobileSkillList', this.skillList);
     },
+    executeResetCommand() {
+      this.skillList = [];
+    },
   },
 }
 </script>

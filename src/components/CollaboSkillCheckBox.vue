@@ -27,6 +27,9 @@ export default {
     onChange() {
       this.$emit('selectCollaboSkillList', this.skillList);
     },
+    executeResetCommand() {
+      this.skillList = [];
+    },
   },
 }
 </script>

@@ -27,6 +27,9 @@ export default {
     onChange() {
       this.$emit('selectDevOpsSkillList', this.skillList);
     },
+    executeResetCommand() {
+      this.skillList = [];
+    },
   },
 }
 </script>
