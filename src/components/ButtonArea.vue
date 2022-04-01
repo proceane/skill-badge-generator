@@ -1,6 +1,8 @@
 <template>
   <v-row class="mt-3 mb-3 ml-3">
-    <v-btn class="mr-3">Reset</v-btn>
+    <v-btn class="mr-3"
+      @click="executeResetCommand"
+    >Reset</v-btn>
     <v-dialog
       v-model="dialog"
       max-width="800px"
@@ -97,6 +99,11 @@ export default {
     },
     collaboSkillList: {
       type: String
+    },
+  },
+  methods: {
+    executeResetCommand() {
+      this.$emit("executeResetCommand");
     },
   },
 }
