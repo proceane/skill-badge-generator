@@ -27,6 +27,9 @@ export default {
     onChange() {
       this.$emit('selectFrontSkillList', this.skillList);
     },
+    executeResetCommand() {
+      this.skillList = [];
+    },
   },
 }
 </script>
