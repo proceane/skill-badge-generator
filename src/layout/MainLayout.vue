@@ -5,10 +5,11 @@
         :langSkillList="langMarkdownSkillList"
         :frontSkillList="frontMarkdownSkillList" 
         :backSkillList="backMarkdownSkillList"
-        :dbSkillList="dbMarkdownSKillList"
-        :mobileSkillList="mobileMarkdownSKillList"
+        :dbSkillList="dbMarkdownSkillList"
+        :mobileSkillList="mobileMarkdownSkillList"
         :devOpsSkillList="devOpsMarkdownSkillList"
         :collaboSkillList="collaboMarkdownSkillList"
+        @executeResetCommand="executeResetCommand"
       />
       <SelectArea 
         @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
@@ -25,6 +26,7 @@
         @sendDevOpsMarkdownSkillList="sendDevOpsSkillListToGenerate"
         @sendCollaboHtmlSkillList="sendCollaboSkillListToPreview"
         @sendCollaboMarkdownSkillList="sendCollaboSkillListToGenerate"
+        ref="selectArea"
       />
     </v-col>
     <v-col cols="12" lg="6">
@@ -61,7 +63,7 @@ export default {
     backHtmlSkillList: null,
     backMarkdownSkillList: null,
     dbHtmlSkillList: null,
-    dbMarkdownSKillList: null,
+    dbMarkdownSkillList: null,
     mobileHtmlSkillList: null,
     mobileMarkdownSkillList: null,
     devOpsHtmlSkillList: null,
@@ -92,7 +94,7 @@ export default {
       this.dbHtmlSkillList = skillList;
     },
     sendDbSkillListToGenerate(skillList) {
-      this.dbMarkdownSKillList = skillList;
+      this.dbMarkdownSkillList = skillList;
     },
     sendMobileSkillListToPreview(skillList) {
       this.mobileHtmlSkillList = skillList;
@@ -112,6 +114,23 @@ export default {
     sendCollaboSkillListToGenerate(skillList) {
       this.collaboMarkdownSkillList = skillList;
     },
+    executeResetCommand() {
+      this.langHtmlSkillList = null;
+      this.langMarkdownSkillList = null;
+      this.frontHtmlSkillList = null;
+      this.frontMarkdownSkillList = null;
+      this.backHtmlSkillList = null;
+      this.backMarkdownSkillList = null;
+      this.mobileHtmlSkillList = null;
+      this.mobileMarkdownSkillList = null;
+      this.dbHtmlSkillList = null;
+      this.dbMarkdownSkillList = null;
+      this.devOpsHtmlSkillList = null;
+      this.devOpsMarkdownSkillList = null;
+      this.collaboHtmlSkillList = null;
+      this.collaboMarkdownSkillList = null;
+      this.$refs.selectArea.executeResetCommand();
+    }
   }
 }
 </script>
