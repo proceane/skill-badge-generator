@@ -86,16 +86,61 @@
       </template>
       <v-card>
         <v-card-title>Option</v-card-title>
+        <v-card-text>
+          <v-row>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <v-switch
+                v-model="titleSwitch"
+                label="Title in Markdown"
+              ></v-switch>
+            </v-col>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <v-switch
+                v-model="logoSwitch"
+                label="Logo in Badge"
+              ></v-switch>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <BadgeColorSelect></BadgeColorSelect>
+            </v-col>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <BadgeStyleSelect></BadgeStyleSelect>
+            </v-col>
+          </v-row>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-row>
 </template>
 
 <script>
+import BadgeStyleSelect from './BadgeStyleSelect';
+import BadgeColorSelect from './BadgeColorSelect';
+
 export default {
+  components: {
+    BadgeStyleSelect,
+    BadgeColorSelect,
+  },
   data: () => ({
     generateDialog: false,
     optionDialog: false,
+    titleSwitch: false,
+    logoSwitch: false,
   }),
   props: {
     langSkillList: {
