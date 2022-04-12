@@ -22,6 +22,7 @@ export default {
   data: () => ({
     skillList: [],
     langSkillList: langSkillList,
+    backupList: langSkillList,
   }),
   methods: {
     onChange() {
@@ -29,6 +30,9 @@ export default {
     },
     executeResetCommand() {
       this.skillList = [];
+    },
+    searchSkill(value) {
+      console.log("search lang skill : " + value);
     },
   },
 }
