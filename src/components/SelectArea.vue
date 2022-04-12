@@ -4,6 +4,7 @@
       label="search skill"
       clearable
       prepend-inner-icon="mdi-magnify"
+      @input="searchSkill"
     ></v-text-field>
     <v-expansion-panels
       v-model="panel"
@@ -132,7 +133,10 @@ export default {
       this.$refs.database.executeResetCommand();
       this.$refs.devOps.executeResetCommand();
       this.$refs.collabo.executeResetCommand();
-    }
+    },
+    searchSkill(value) {
+      this.$refs.lang.searchSkill(value);
+    },
   },
 }
 </script>
