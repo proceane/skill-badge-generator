@@ -5,8 +5,12 @@
       clearable
       prepend-inner-icon="mdi-magnify"
     ></v-text-field>
-    <v-expansion-panels>
-      <v-expansion-panel class="">
+    <v-expansion-panels
+      v-model="panel"
+      multiple
+      readonly
+    >
+      <v-expansion-panel>
         <v-expansion-panel-header>Language</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -14,7 +18,7 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <v-expansion-panel class="">
+      <v-expansion-panel>
         <v-expansion-panel-header>Front-End</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -22,7 +26,7 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <v-expansion-panel class="">
+      <v-expansion-panel>
         <v-expansion-panel-header>Back-End</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -30,7 +34,7 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <v-expansion-panel class="">
+      <v-expansion-panel>
         <v-expansion-panel-header>Mobile</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -38,7 +42,7 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <v-expansion-panel class="">
+      <v-expansion-panel>
         <v-expansion-panel-header>Database</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -46,7 +50,7 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <v-expansion-panel class="">
+      <v-expansion-panel>
         <v-expansion-panel-header>DevOps</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -54,7 +58,7 @@
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <v-expansion-panel class="">
+      <v-expansion-panel>
         <v-expansion-panel-header>Collaborate</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-container fluid>
@@ -79,6 +83,9 @@ import listToHtml from '../function/convertListToHtml';
 import listToMarkdown from '../function/convertListToMarkdown';
 
 export default {
+  data: () => ({
+    panel: [0, 1, 2, 3, 4, 5, 6],
+  }),
   components: {
     FrontSkillCheckBox,
     LangSkillCheckBox,
