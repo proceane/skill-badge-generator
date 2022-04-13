@@ -1,6 +1,7 @@
 <template>
-  <v-row>
-    <v-col cols="12" lg="6">
+  <v-container fluid>
+    <v-row>
+      <v-col cols="12" lg="12">
       <ButtonArea 
         :langSkillList="langMarkdownSkillList"
         :frontSkillList="frontMarkdownSkillList" 
@@ -11,36 +12,41 @@
         :collaboSkillList="collaboMarkdownSkillList"
         @executeResetCommand="executeResetCommand"
       />
-      <SelectArea 
-        @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
-        @sendFrontMarkdownSkillList="sendFrontSkillListToGenerate"
-        @sendLangHtmlSkillList="sendLangSkillListToPreview"
-        @sendLangMarkdownSkillList="sendLangSkillListToGenerate"
-        @sendBackHtmlSkillList="sendBackSkillListToPreview"
-        @sendBackMarkdownSkillList="sendBackSkillListToGenerate"
-        @sendDbHtmlSkillList="sendDbSkillListToPreview"
-        @sendDbMarkdownSkillList="sendDbSkillListToGenerate"
-        @sendMobileHtmlSkillList="sendMobileSkillListToPreview"
-        @sendMobileMarkdownSkillList="sendMobileSkillListToGenerate"
-        @sendDevOpsHtmlSkillList="sendDevOpsSkillListToPreview"
-        @sendDevOpsMarkdownSkillList="sendDevOpsSkillListToGenerate"
-        @sendCollaboHtmlSkillList="sendCollaboSkillListToPreview"
-        @sendCollaboMarkdownSkillList="sendCollaboSkillListToGenerate"
-        ref="selectArea"
-      />
-    </v-col>
-    <v-col cols="12" lg="6">
-      <PreviewArea 
-        :langSkillList="langHtmlSkillList" 
-        :frontSkillList="frontHtmlSkillList" 
-        :backSkillList="backHtmlSkillList"
-        :dbSkillList="dbHtmlSkillList"
-        :mobileSkillList="mobileHtmlSkillList"
-        :devOpsSkillList="devOpsHtmlSkillList"
-        :collaboSkillList="collaboHtmlSkillList"
-      />
-    </v-col>
-  </v-row>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" lg="6">
+        <SelectArea 
+          @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
+          @sendFrontMarkdownSkillList="sendFrontSkillListToGenerate"
+          @sendLangHtmlSkillList="sendLangSkillListToPreview"
+          @sendLangMarkdownSkillList="sendLangSkillListToGenerate"
+          @sendBackHtmlSkillList="sendBackSkillListToPreview"
+          @sendBackMarkdownSkillList="sendBackSkillListToGenerate"
+          @sendDbHtmlSkillList="sendDbSkillListToPreview"
+          @sendDbMarkdownSkillList="sendDbSkillListToGenerate"
+          @sendMobileHtmlSkillList="sendMobileSkillListToPreview"
+          @sendMobileMarkdownSkillList="sendMobileSkillListToGenerate"
+          @sendDevOpsHtmlSkillList="sendDevOpsSkillListToPreview"
+          @sendDevOpsMarkdownSkillList="sendDevOpsSkillListToGenerate"
+          @sendCollaboHtmlSkillList="sendCollaboSkillListToPreview"
+          @sendCollaboMarkdownSkillList="sendCollaboSkillListToGenerate"
+          ref="selectArea"
+        />
+      </v-col>
+      <v-col cols="12" lg="6">
+        <PreviewArea 
+          :langSkillList="langHtmlSkillList" 
+          :frontSkillList="frontHtmlSkillList" 
+          :backSkillList="backHtmlSkillList"
+          :dbSkillList="dbHtmlSkillList"
+          :mobileSkillList="mobileHtmlSkillList"
+          :devOpsSkillList="devOpsHtmlSkillList"
+          :collaboSkillList="collaboHtmlSkillList"
+        />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
