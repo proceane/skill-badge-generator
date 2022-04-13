@@ -5,7 +5,7 @@
       :key="item.skill"
       :label="item.skill"
       v-model="skillList"
-      v-bind:value="{'logo': item.logo, 'name': item.skill, 'color': item.color}"
+      v-bind:value="{'logo': item.logo, 'skill': item.skill, 'color': item.color}"
       hide-details
       @change="onChange"
     >
