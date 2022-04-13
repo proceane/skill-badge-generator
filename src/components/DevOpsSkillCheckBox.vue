@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <!-- <v-row>
     <v-checkbox
       v-for="item in devOpsSkillList"
       :key="item.skill"
@@ -10,7 +10,18 @@
       @change="onChange"
     >
     </v-checkbox>
-  </v-row>  
+  </v-row>   -->
+  <v-autocomplete
+    v-model="skillList"
+    :items="devOpsSkillList"
+    item-text="skill"
+    return-object
+    dense
+    chips
+    label="DevOps"
+    multiple
+    @change="onChange"
+  ></v-autocomplete>
 </template>
 
 <script>
