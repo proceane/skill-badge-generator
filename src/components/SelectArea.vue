@@ -1,74 +1,17 @@
 <template>
-  <v-row class="ml-3 mr-3">
-    <v-text-field
-      label="search skill"
-      clearable
-      prepend-inner-icon="mdi-magnify"
-      @input="searchSkill"
-    ></v-text-field>
-    <v-expansion-panels
-      v-model="panel"
-      multiple
-      readonly
-    >
-      <v-expansion-panel>
-        <v-expansion-panel-header>Language</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" ref="lang"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>Front-End</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList" ref="front"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>Back-End</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <BackSkillCheckBox @selectBackSkillList="sendBackSkillList" ref="back"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>Mobile</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList" ref="mobile"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>Database</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <DbSkillCheckBox @selectDbSkillList="sendDbSkillList" ref="database"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>DevOps</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList" ref="devOps"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>Collaborate</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container fluid>
-              <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" ref="collabo"/>
-          </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
-  </v-row>
+  <v-container>
+    <v-card>
+      <v-card-text>
+        <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" ref="lang"/>
+        <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList" ref="front"/>
+        <BackSkillCheckBox @selectBackSkillList="sendBackSkillList" ref="back"/>
+        <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList" ref="mobile"/>
+        <DbSkillCheckBox @selectDbSkillList="sendDbSkillList" ref="database"/>
+        <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList" ref="devOps"/>
+        <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" ref="collabo"/>
+      </v-card-text>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -84,9 +27,6 @@ import listToHtml from '../function/convertListToHtml';
 import listToMarkdown from '../function/convertListToMarkdown';
 
 export default {
-  data: () => ({
-    panel: [0, 1, 2, 3, 4, 5, 6],
-  }),
   components: {
     FrontSkillCheckBox,
     LangSkillCheckBox,
@@ -133,9 +73,6 @@ export default {
       this.$refs.database.executeResetCommand();
       this.$refs.devOps.executeResetCommand();
       this.$refs.collabo.executeResetCommand();
-    },
-    searchSkill(value) {
-      this.$refs.lang.searchSkill(value);
     },
   },
 }
