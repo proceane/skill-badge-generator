@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <!-- <v-row>
     <v-checkbox
       v-for="item in collaboSkillList"
       :key="item.skill"
@@ -10,7 +10,18 @@
       @change="onChange"
     >
     </v-checkbox>
-  </v-row>  
+  </v-row>   -->
+  <v-autocomplete
+    v-model="skillList"
+    :items="collaboSkillList"
+    item-text="skill"
+    return-object
+    dense
+    chips
+    label="Collaborate"
+    multiple
+    @change="onChange"
+  ></v-autocomplete>
 </template>
 
 <script>
