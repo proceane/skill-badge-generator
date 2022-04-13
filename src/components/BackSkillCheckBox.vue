@@ -4,12 +4,26 @@
     :items="backSkillList"
     item-text="skill"
     return-object
-    dense
     chips
     label="Back-End"
     multiple
     @change="onChange"
-  ></v-autocomplete>
+  >
+    <template v-slot:selection="data">
+      <v-chip
+        v-bind="data.attrs"
+        :input-value="data.selected"
+        close
+        @click="data.select"
+        @click:close="remove(data.item)"
+        :color="'#' + data.item.color"
+        text-color="white"
+        small
+      >
+        {{ data.item.skill }}
+      </v-chip>
+    </template>
+  </v-autocomplete>
 </template>
 
 <script>
@@ -28,6 +42,13 @@ export default {
     },
     executeResetCommand() {
       this.skillList = [];
+    },
+    remove(item) {
+      const index = this.skillList.findIndex(i => i.skill == item.skill);
+      if (index >= 0) {
+        this.skillList.splice(index, 1);
+        this.onChange();
+      }
     },
   },
 }
