@@ -22,7 +22,6 @@ export default {
   data: () => ({
     skillList: [],
     langSkillList: langSkillList,
-    backupList: langSkillList,
   }),
   methods: {
     onChange() {
