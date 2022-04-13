@@ -1,5 +1,4 @@
 <template>
-  <v-container>
     <v-card>
       <v-card-text>
         <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" ref="lang"/>
@@ -11,7 +10,6 @@
         <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" ref="collabo"/>
       </v-card-text>
     </v-card>
-  </v-container>
 </template>
 
 <script>
