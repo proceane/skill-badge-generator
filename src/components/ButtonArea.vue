@@ -3,6 +3,62 @@
     <v-btn class="mr-3"
       @click="executeResetCommand"
     >Reset</v-btn>
+
+    <v-dialog
+      v-model="optionDialog"
+      max-width="800px"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          v-bind="attrs"
+          v-on="on"
+        >
+          Option
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title>Option</v-card-title>
+        <v-card-text>
+          <v-row>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <v-switch
+                v-model="titleSwitch"
+                label="Title in Markdown"
+              ></v-switch>
+            </v-col>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <v-switch
+                v-model="logoSwitch"
+                label="Logo in Badge"
+              ></v-switch>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <BadgeColorSelect></BadgeColorSelect>
+            </v-col>
+            <v-col
+              cols="12"
+              md="6"
+            >
+              <BadgeStyleSelect></BadgeStyleSelect>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+
+    <v-spacer></v-spacer>
+
     <v-dialog
       v-model="generateDialog"
       max-width="800px"
@@ -11,7 +67,7 @@
         <v-btn
           v-bind="attrs"
           v-on="on"
-          class="mr-3"
+          class="mr-5"
         >
           Generate
         </v-btn>
@@ -71,59 +127,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-
-    <v-dialog
-      v-model="optionDialog"
-      max-width="800px"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          v-bind="attrs"
-          v-on="on"
-        >
-          Option
-        </v-btn>
-      </template>
-      <v-card>
-        <v-card-title>Option</v-card-title>
-        <v-card-text>
-          <v-row>
-            <v-col
-              cols="12"
-              md="6"
-            >
-              <v-switch
-                v-model="titleSwitch"
-                label="Title in Markdown"
-              ></v-switch>
-            </v-col>
-            <v-col
-              cols="12"
-              md="6"
-            >
-              <v-switch
-                v-model="logoSwitch"
-                label="Logo in Badge"
-              ></v-switch>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col
-              cols="12"
-              md="6"
-            >
-              <BadgeColorSelect></BadgeColorSelect>
-            </v-col>
-            <v-col
-              cols="12"
-              md="6"
-            >
-              <BadgeStyleSelect></BadgeStyleSelect>
-            </v-col>
-          </v-row>
-        </v-card-text>
-      </v-card>
-    </v-dialog>
+    
   </v-row>
 </template>
 
