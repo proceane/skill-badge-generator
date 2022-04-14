@@ -136,7 +136,7 @@
           <v-btn
             color="blue darken-1"
             text
-            @click="saveOption"
+            @click="generateDialog = false"
           >
             Close
           </v-btn>
