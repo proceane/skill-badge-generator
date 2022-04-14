@@ -43,9 +43,6 @@ export default {
     executeResetCommand() {
       this.skillList = [];
     },
-    searchSkill(value) {
-      console.log("search lang skill : " + value);
-    },
     remove(item) {
       const index = this.skillList.findIndex(i => i.skill == item.skill);
       if (index >= 0) {
