@@ -25,6 +25,7 @@
           <v-color-picker
             v-model="color"
             hide-inputs
+            @input="changeColor"
           ></v-color-picker>
         </v-card>
       </v-menu>
@@ -39,5 +40,10 @@ export default {
     colorPicker: false,
     color: '#FFFFFF',
   }),
+  methods: {
+    changeColor() {
+      this.$emit("selectColor", this.color);
+    }
+  },
 }
 </script>
