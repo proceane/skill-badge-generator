@@ -11,6 +11,7 @@
         :devOpsSkillList="devOpsMarkdownSkillList"
         :collaboSkillList="collaboMarkdownSkillList"
         @executeResetCommand="executeResetCommand"
+        @isShowTitle="sendIsShowTitle"
       />
       </v-col>
     </v-row>
@@ -43,6 +44,7 @@
           :mobileSkillList="mobileHtmlSkillList"
           :devOpsSkillList="devOpsHtmlSkillList"
           :collaboSkillList="collaboHtmlSkillList"
+          ref="previewArea"
         />
       </v-col>
     </v-row>
@@ -136,7 +138,10 @@ export default {
       this.collaboHtmlSkillList = null;
       this.collaboMarkdownSkillList = null;
       this.$refs.selectArea.executeResetCommand();
-    }
+    },
+    sendIsShowTitle(isShow) {
+      this.$refs.previewArea.sendIsShowTitle(isShow);
+    },
   }
 }
 </script>
