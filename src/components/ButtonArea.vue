@@ -27,6 +27,7 @@
               <v-switch
                 v-model="titleSwitch"
                 label="Title in Markdown"
+                @change="sendIsShowTitle"
               ></v-switch>
             </v-col>
             <v-col
@@ -161,7 +162,7 @@ export default {
     generateDialog: false,
     optionDialog: false,
     titleSwitch: false,
-    logoSwitch: false,
+    logoSwitch: true,
     sampleBadgeColor: "blue",
     sampleBadgeStyle: "flat-square",
     sampleBadgeMaxWidth: "67px",
@@ -221,7 +222,10 @@ export default {
           this.sampleBadgeMaxHeight = "20px";
           break;
       }
-    }
+    },
+    sendIsShowTitle(isShow) {
+      this.$emit("isShowTitle", isShow);
+    },
   },
 }
 </script>
