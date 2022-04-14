@@ -36,6 +36,7 @@
               <v-switch
                 v-model="logoSwitch"
                 label="Logo in Badge"
+                @change="setSampleBadgeSize(sampleBadgeStyle, logoSwitch)"
               ></v-switch>
             </v-col>
           </v-row>
@@ -50,7 +51,7 @@
               cols="12"
               md="6"
             >
-              <BadgeStyleSelect></BadgeStyleSelect>
+              <BadgeStyleSelect @selectStyle="setSampleBadgeStyle"></BadgeStyleSelect>
             </v-col>
           </v-row>
         </v-card-text>
@@ -195,6 +196,31 @@ export default {
     },
     setSampleBadgeColor(color) {
       this.sampleBadgeColor = color.substring(1);
+    },
+    setSampleBadgeStyle(style) {
+      this.sampleBadgeStyle = style;
+      this.setSampleBadgeSize(style, this.logoSwitch);
+    },
+    setSampleBadgeSize(style, existLogo) {
+      switch (style) {
+        case 'plastic':
+          this.sampleBadgeMaxWidth = existLogo ? "67px" : "49px";
+          this.sampleBadgeMaxHeight = "18px";
+          break;
+        case 'flat': 
+        case 'flat-square':
+          this.sampleBadgeMaxWidth = existLogo ? "67px" : "49px";
+          this.sampleBadgeMaxHeight = "20px";
+          break;
+        case 'for-the-badge':
+          this.sampleBadgeMaxWidth = existLogo ? "96px" : "76px";
+          this.sampleBadgeMaxHeight = "28px";
+          break;
+        case 'social':
+          this.sampleBadgeMaxWidth = existLogo ? "79px" : "65px";
+          this.sampleBadgeMaxHeight = "20px";
+          break;
+      }
     }
   },
 }
