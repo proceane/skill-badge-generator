@@ -44,7 +44,7 @@
               cols="12"
               md="6"
             >
-              <BadgeColorSelect></BadgeColorSelect>
+              <BadgeColorSelect @selectColor="setSampleBadgeColor"></BadgeColorSelect>
             </v-col>
             <v-col
               cols="12"
@@ -193,6 +193,9 @@ export default {
     executeResetCommand() {
       this.$emit("executeResetCommand");
     },
+    setSampleBadgeColor(color) {
+      this.sampleBadgeColor = color.substring(1);
+    }
   },
 }
 </script>
