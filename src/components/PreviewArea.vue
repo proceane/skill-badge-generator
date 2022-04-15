@@ -4,38 +4,52 @@
 
     <v-card-text>
       <h3 class="mb-2" v-if="isShow">Language</h3>
-      <div id="language-preview-area" v-html="langSkillList">
-      </div>
+      <div 
+        v-html="langSkillList"
+        v-if="langSkillList != null"
+      ></div>
 
-      <br>
+      <br v-if="isShow">
       <h3 class="mb-2" v-if="isShow">Front-End</h3>
-      <div id="front-end-preview-area" v-html="frontSkillList">
-      </div>
+      <div 
+        v-html="frontSkillList"
+        v-if="frontSkillList != null"
+      ></div>
 
-      <br>
+      <br v-if="isShow">
       <h3 class="mb-2" v-if="isShow">Back-End</h3>
-      <div id="back-end-preview-area" v-html="backSkillList">
-      </div>
+      <div 
+        v-html="backSkillList"
+        v-if="backSkillList != null"
+      ></div>
 
-      <br>
+      <br v-if="isShow">
       <h3 class="mb-2" v-if="isShow">Mobile</h3>
-      <div id="mobile-preview-area" v-html="mobileSkillList">
-      </div>
+      <div 
+        v-html="mobileSkillList"
+        v-if="mobileSkillList != null"
+      ></div>
 
-      <br>
+      <br v-if="isShow">
       <h3 class="mb-2" v-if="isShow">Database</h3>
-      <div id="database-preview-area" v-html="dbSkillList">
-      </div>
+      <div 
+        v-html="dbSkillList"
+        v-if="dbSkillList != null"
+      ></div>
 
-      <br>
+      <br v-if="isShow">
       <h3 class="mb-2" v-if="isShow">DevOps</h3>
-      <div id="devOps-preview-area" v-html="devOpsSkillList">
-      </div>
+      <div 
+        v-html="devOpsSkillList"
+        v-if="devOpsSkillList != null"
+      ></div>
 
-      <br>
+      <br v-if="isShow">
       <h3 class="mb-2" v-if="isShow">Collaborate</h3>
-      <div id="collabo-preview-area" v-html="collaboSkillList">
-      </div>
+      <div 
+        v-html="collaboSkillList"
+        v-if="collaboSkillList != null"  
+      ></div>
     </v-card-text>
     
   </v-card>
