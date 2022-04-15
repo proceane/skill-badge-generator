@@ -18,20 +18,13 @@
     <v-row>
       <v-col cols="12" lg="6">
         <SelectArea 
-          @sendFrontHtmlSkillList="sendFrontSkillListToPreview" 
-          @sendFrontMarkdownSkillList="sendFrontSkillListToGenerate"
-          @sendLangHtmlSkillList="sendLangSkillListToPreview"
-          @sendLangMarkdownSkillList="sendLangSkillListToGenerate"
-          @sendBackHtmlSkillList="sendBackSkillListToPreview"
-          @sendBackMarkdownSkillList="sendBackSkillListToGenerate"
-          @sendDbHtmlSkillList="sendDbSkillListToPreview"
-          @sendDbMarkdownSkillList="sendDbSkillListToGenerate"
-          @sendMobileHtmlSkillList="sendMobileSkillListToPreview"
-          @sendMobileMarkdownSkillList="sendMobileSkillListToGenerate"
-          @sendDevOpsHtmlSkillList="sendDevOpsSkillListToPreview"
-          @sendDevOpsMarkdownSkillList="sendDevOpsSkillListToGenerate"
-          @sendCollaboHtmlSkillList="sendCollaboSkillListToPreview"
-          @sendCollaboMarkdownSkillList="sendCollaboSkillListToGenerate"
+          @sendLangSkillList="sendLangSkillList"
+          @sendFrontSkillList="sendFrontSkillList"
+          @sendBackSkillList="sendBackSkillList"
+          @sendDbSkillList="sendDbSkillList"
+          @sendMobileSkillList="sendMobileSkillList"
+          @sendDevOpsSkillList="sendDevOpsSkillList"
+          @sendCollaboSkillList="sendCollaboSkillList"
           ref="selectArea"
         />
       </v-col>
@@ -55,6 +48,9 @@
 import ButtonArea from '../components/ButtonArea';
 import SelectArea from '../components/SelectArea';
 import PreviewArea from '../components/PreviewArea';
+
+import listToHtml from '../function/convertListToHtml';
+import listToMarkdown from '../function/convertListToMarkdown';
 
 export default {
   name: "MainLayout",
@@ -80,47 +76,33 @@ export default {
     collaboMarkdownSkillList: null,
   }),
   methods: {
-    sendLangSkillListToPreview(skillList) {
-      this.langHtmlSkillList = skillList;
+    sendLangSkillList(skillList) {
+      this.langHtmlSkillList = listToHtml(skillList);
+      this.langMarkdownSkillList = listToMarkdown(skillList);
     },
-    sendLangSkillListToGenerate(skillList) {
-      this.langMarkdownSkillList = skillList;
+    sendFrontSkillList(skillList) {
+      this.frontHtmlSkillList = listToHtml(skillList);
+      this.frontMarkdownSkillList = listToMarkdown(skillList);
     },
-    sendFrontSkillListToPreview(skillList) {
-      this.frontHtmlSkillList = skillList;
+    sendBackSkillList(skillList) {
+      this.backHtmlSkillList = listToHtml(skillList);
+      this.backMarkdownSkillList = listToMarkdown(skillList);
     },
-    sendFrontSkillListToGenerate(skillList) {
-      this.frontMarkdownSkillList = skillList;
+    sendDbSkillList(skillList) {
+      this.dbHtmlSkillList = listToHtml(skillList);
+      this.dbMarkdownSkillList = listToMarkdown(skillList);
     },
-    sendBackSkillListToPreview(skillList) {
-      this.backHtmlSkillList = skillList;
+    sendMobileSkillList(skillList) {
+      this.mobileHtmlSkillList = listToHtml(skillList);
+      this.mobileMarkdownSkillList = listToMarkdown(skillList);
     },
-    sendBackSkillListToGenerate(skillList) {
-      this.backMarkdownSkillList = skillList;
+    sendDevOpsSkillList(skillList) {
+      this.devOpsHtmlSkillList = listToHtml(skillList);
+      this.devOpsMarkdownSkillList = listToMarkdown(skillList);
     },
-    sendDbSkillListToPreview(skillList) {
-      this.dbHtmlSkillList = skillList;
-    },
-    sendDbSkillListToGenerate(skillList) {
-      this.dbMarkdownSkillList = skillList;
-    },
-    sendMobileSkillListToPreview(skillList) {
-      this.mobileHtmlSkillList = skillList;
-    },
-    sendMobileSkillListToGenerate(skillList) {
-      this.mobileMarkdownSkillList = skillList;
-    },
-    sendDevOpsSkillListToPreview(skillList) {
-      this.devOpsHtmlSkillList = skillList;
-    },
-    sendDevOpsSkillListToGenerate(skillList) {
-      this.devOpsMarkdownSkillList = skillList;
-    },
-    sendCollaboSkillListToPreview(skillList) {
-      this.collaboHtmlSkillList = skillList;
-    },
-    sendCollaboSkillListToGenerate(skillList) {
-      this.collaboMarkdownSkillList = skillList;
+    sendCollaboSkillList(skillList) {
+      this.collaboHtmlSkillList = listToHtml(skillList);
+      this.collaboMarkdownSkillList = listToMarkdown(skillList);
     },
     executeResetCommand() {
       this.langHtmlSkillList = null;
