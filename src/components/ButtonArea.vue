@@ -150,8 +150,8 @@
 </template>
 
 <script>
-import BadgeStyleSelect from './BadgeStyleSelect';
-import BadgeColorSelect from './BadgeColorSelect';
+import BadgeStyleSelect from './selects/BadgeStyleSelect';
+import BadgeColorSelect from './selects/BadgeColorSelect';
 
 export default {
   components: {
