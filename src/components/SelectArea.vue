@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import FrontSkillCheckBox from './FrontSkillCheckBox';
-import LangSkillCheckBox from './LangSkillCheckBox';
-import BackSkillCheckBox from './BackSkillCheckBox';
-import DbSkillCheckBox from './DbSkillCheckBox';
-import MobileSkillCheckBox from './MobileSkillCheckBox';
-import DevOpsSkillCheckBox from './DevOpsSkillCheckBox';
-import CollaboSkillCheckBox from './CollaboSkillCheckBox';
+import FrontSkillCheckBox from './checkboxs/FrontSkillCheckBox';
+import LangSkillCheckBox from './checkboxs/LangSkillCheckBox';
+import BackSkillCheckBox from './checkboxs/BackSkillCheckBox';
+import DbSkillCheckBox from './checkboxs/DbSkillCheckBox';
+import MobileSkillCheckBox from './checkboxs/MobileSkillCheckBox';
+import DevOpsSkillCheckBox from './checkboxs/DevOpsSkillCheckBox';
+import CollaboSkillCheckBox from './checkboxs/CollaboSkillCheckBox';
 
 export default {
   components: {
