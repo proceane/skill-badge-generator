@@ -21,9 +21,6 @@ import MobileSkillCheckBox from './MobileSkillCheckBox';
 import DevOpsSkillCheckBox from './DevOpsSkillCheckBox';
 import CollaboSkillCheckBox from './CollaboSkillCheckBox';
 
-import listToHtml from '../function/convertListToHtml';
-import listToMarkdown from '../function/convertListToMarkdown';
-
 export default {
   components: {
     FrontSkillCheckBox,
@@ -36,32 +33,25 @@ export default {
   },
   methods: {
     sendFrontSkillList(skillList) {
-      this.$emit('sendFrontHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendFrontMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendFrontSkillList', skillList);
     },
     sendLangSkillList(skillList) {
-      this.$emit('sendLangHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendLangMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendLangSkillList', skillList);
     },
     sendBackSkillList(skillList) {
-      this.$emit('sendBackHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendBackMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendBackSkillList', skillList);
     },
     sendDbSkillList(skillList) {
-      this.$emit('sendDbHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendDbMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendDbSkillList', skillList);
     },
     sendMobileSkillList(skillList) {
-      this.$emit('sendMobileHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendMobileMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendMobileSkillList', skillList);
     },
     sendDevOpsSkillList(skillList) {
-      this.$emit('sendDevOpsHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendDevOpsMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendDevOpsSkillList', skillList);
     },
     sendCollaboSkillList(skillList) {
-      this.$emit('sendCollaboHtmlSkillList', listToHtml(skillList));
-      this.$emit('sendCollaboMarkdownSkillList', listToMarkdown(skillList));
+      this.$emit('sendCollaboSkillList', skillList);
     },
     executeResetCommand() {
       this.$refs.lang.executeResetCommand();
