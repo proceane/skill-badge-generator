@@ -215,10 +215,12 @@ export default {
     },
     setSampleBadgeColor(color) {
       this.sampleBadgeColor = color.substring(1);
+      this.$emit("sendBadgeColor", color.substring(1));
     },
     setSampleBadgeStyle(style) {
       this.sampleBadgeStyle = style;
       this.setSampleBadgeSize(style, this.logoSwitch);
+      this.$emit("sendBadgeStyle", style);
     },
     setSampleBadgeSize(style, existLogo) {
       switch (style) {
