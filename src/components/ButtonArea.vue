@@ -242,9 +242,14 @@ export default {
           this.sampleBadgeMaxHeight = "20px";
           break;
       }
+
+      this.sendIsShowLogo(existLogo);
     },
     sendIsShowTitle(isShow) {
       this.$emit("isShowTitle", isShow);
+    },
+    sendIsShowLogo(isShow) {
+      this.$emit("isShowLogo", isShow);
     },
   },
 }
