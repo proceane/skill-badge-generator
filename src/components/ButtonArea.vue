@@ -76,7 +76,6 @@
       </v-card>
     </v-dialog>
     
-
     <v-spacer></v-spacer>
 
     <v-dialog
@@ -98,39 +97,46 @@
         </v-card-title>
         <v-card-text>
           <v-container>
-            <v-row v-if="langSkillList">
-              <code lang="markdown">
+            <v-row>
+              <code 
+                lang="markdown"
+                v-if="existList"
+                style="width: 100%;"
+              >
+                {{ titleSwitch && langSkillList != null ? '### Language' : ''}}
+                <br v-if="titleSwitch && langSkillList != null">
                 {{langSkillList}}
-              </code>
-            </v-row>
-            <v-row v-if="frontSkillList">
-              <code lang="markdown">
+
+                <br v-if="titleSwitch && frontSkillList != null">
+                {{ titleSwitch && frontSkillList != null ? '### Front-End' : ''}}
+                <br v-if="titleSwitch && frontSkillList != null">
                 {{frontSkillList}}
-              </code>
-            </v-row>
-            <v-row v-if="backSkillList">
-              <code lang="markdown">
+
+                <br v-if="titleSwitch && backSkillList != null">
+                {{ titleSwitch && backSkillList != null ? '### Back-End' : ''}}
+                <br v-if="titleSwitch && backSkillList != null">
                 {{backSkillList}}
-              </code>
-            </v-row>
-            <v-row v-if="mobileSkillList">
-              <code lang="markdown">
+
+                <br v-if="titleSwitch && mobileSkillList != null">
+                {{ titleSwitch && mobileSkillList != null ? '### Mobile' : ''}}
+                <br v-if="titleSwitch && mobileSkillList != null">
                 {{mobileSkillList}}
-              </code>
-            </v-row>
-            <v-row v-if="dbSkillList">
-              <code lang="markdown">
+
+                <br v-if="titleSwitch && dbSkillList != null">
+                {{ titleSwitch && dbSkillList != null ? '### Database' : ''}}
+                <br v-if="titleSwitch && dbSkillList != null">
                 {{dbSkillList}}
-              </code>
-            </v-row>
-            <v-row v-if="devOpsSkillList">
-              <code lang="markdown">
+                
+                <br v-if="titleSwitch && devOpsSkillList != null">
+                {{ titleSwitch && devOpsSkillList != null ? '### DevOps' : ''}}
+                <br v-if="titleSwitch && devOpsSkillList != null">
                 {{devOpsSkillList}}
-              </code>
-            </v-row>
-            <v-row v-if="collaboSkillList">
-              <code lang="markdown">
+
+                <br v-if="titleSwitch && collaboSkillList != null">
+                {{ titleSwitch && collaboSkillList != null ? '### Collaborate' : ''}}
+                <br v-if="titleSwitch && collaboSkillList != null">
                 {{collaboSkillList}}
+
               </code>
             </v-row>
           </v-container>
@@ -147,7 +153,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    
   </v-row>
 </template>
 
@@ -191,6 +196,17 @@ export default {
     },
     collaboSkillList: {
       type: String
+    },
+  },
+  computed: {
+    existList() {
+      return this.langSkillList != null || 
+            this.frontSkillList != null || 
+            this.backSkillList != null || 
+            this.mobileSkillList != null ||
+            this.dbSkillList != null ||
+            this.devOpsSkillList != null ||
+            this.collaboSkillList != null;
     },
   },
   methods: {
