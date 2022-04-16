@@ -14,6 +14,7 @@
         @isShowTitle="sendIsShowTitle"
         @sendBadgeColor="setBadgeColor"
         @sendBadgeStyle="setBadgeStyle"
+        @isShowLogo="setShowLogo"
       />
       </v-col>
     </v-row>
@@ -134,6 +135,9 @@ export default {
     },
     setBadgeStyle(style) {
       this.badgeStyle = style;
+    },
+    setShowLogo(isShow) {
+      this.showLogo = isShow;
     }
   }
 }
