@@ -83,31 +83,31 @@ export default {
   methods: {
     sendLangSkillList(skillList) {
       this.langHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.langMarkdownSkillList = listToMarkdown(skillList);
+      this.langMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     sendFrontSkillList(skillList) {
       this.frontHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.frontMarkdownSkillList = listToMarkdown(skillList);
+      this.frontMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     sendBackSkillList(skillList) {
       this.backHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.backMarkdownSkillList = listToMarkdown(skillList);
+      this.backMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     sendDbSkillList(skillList) {
       this.dbHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.dbMarkdownSkillList = listToMarkdown(skillList);
+      this.dbMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     sendMobileSkillList(skillList) {
       this.mobileHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.mobileMarkdownSkillList = listToMarkdown(skillList);
+      this.mobileMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     sendDevOpsSkillList(skillList) {
       this.devOpsHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.devOpsMarkdownSkillList = listToMarkdown(skillList);
+      this.devOpsMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     sendCollaboSkillList(skillList) {
       this.collaboHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.collaboMarkdownSkillList = listToMarkdown(skillList);
+      this.collaboMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     executeResetCommand() {
       this.langHtmlSkillList = null;
