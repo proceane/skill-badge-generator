@@ -82,31 +82,31 @@ export default {
   }),
   methods: {
     sendLangSkillList(skillList) {
-      this.langHtmlSkillList = listToHtml(skillList);
+      this.langHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.langMarkdownSkillList = listToMarkdown(skillList);
     },
     sendFrontSkillList(skillList) {
-      this.frontHtmlSkillList = listToHtml(skillList);
+      this.frontHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.frontMarkdownSkillList = listToMarkdown(skillList);
     },
     sendBackSkillList(skillList) {
-      this.backHtmlSkillList = listToHtml(skillList);
+      this.backHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.backMarkdownSkillList = listToMarkdown(skillList);
     },
     sendDbSkillList(skillList) {
-      this.dbHtmlSkillList = listToHtml(skillList);
+      this.dbHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.dbMarkdownSkillList = listToMarkdown(skillList);
     },
     sendMobileSkillList(skillList) {
-      this.mobileHtmlSkillList = listToHtml(skillList);
+      this.mobileHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.mobileMarkdownSkillList = listToMarkdown(skillList);
     },
     sendDevOpsSkillList(skillList) {
-      this.devOpsHtmlSkillList = listToHtml(skillList);
+      this.devOpsHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.devOpsMarkdownSkillList = listToMarkdown(skillList);
     },
     sendCollaboSkillList(skillList) {
-      this.collaboHtmlSkillList = listToHtml(skillList);
+      this.collaboHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.collaboMarkdownSkillList = listToMarkdown(skillList);
     },
     executeResetCommand() {
