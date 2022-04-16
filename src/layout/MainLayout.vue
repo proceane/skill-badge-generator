@@ -12,6 +12,8 @@
         :collaboSkillList="collaboMarkdownSkillList"
         @executeResetCommand="executeResetCommand"
         @isShowTitle="sendIsShowTitle"
+        @sendBadgeColor="setBadgeColor"
+        @sendBadgeStyle="setBadgeStyle"
       />
       </v-col>
     </v-row>
@@ -74,6 +76,9 @@ export default {
     devOpsMarkdownSkillList: null,
     collaboHtmlSkillList: null,
     collaboMarkdownSkillList: null,
+    badgeColor: 'FFFFFF',
+    badgeStyle: 'flat-square',
+    showLogo: true,
   }),
   methods: {
     sendLangSkillList(skillList) {
@@ -124,6 +129,12 @@ export default {
     sendIsShowTitle(isShow) {
       this.$refs.previewArea.sendIsShowTitle(isShow);
     },
+    setBadgeColor(color) {
+      this.badgeColor = color;
+    },
+    setBadgeStyle(style) {
+      this.badgeStyle = style;
+    }
   }
 }
 </script>
