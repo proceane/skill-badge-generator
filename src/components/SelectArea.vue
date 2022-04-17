@@ -44,6 +44,15 @@ export default {
       this.$refs.devOps.executeResetCommand();
       this.$refs.collabo.executeResetCommand();
     },
+    executeResendCommand() {
+      this.$refs.lang.onChange();
+      this.$refs.front.onChange();
+      this.$refs.back.onChange();
+      this.$refs.mobile.onChange();
+      this.$refs.database.onChange();
+      this.$refs.devOps.onChange();
+      this.$refs.collabo.onChange();
+    },
   },
 }
 </script>
