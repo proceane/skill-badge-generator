@@ -132,12 +132,15 @@ export default {
     },
     setBadgeColor(color) {
       this.badgeColor = color;
+      this.$refs.selectArea.executeResendCommand();
     },
     setBadgeStyle(style) {
       this.badgeStyle = style;
+      this.$refs.selectArea.executeResendCommand();
     },
     setShowLogo(isShow) {
       this.showLogo = isShow;
+      this.$refs.selectArea.executeResendCommand();
     }
   }
 }
