@@ -21,13 +21,6 @@
     <v-row>
       <v-col cols="12" lg="6">
         <SelectArea 
-          @sendLangSkillList="sendLangSkillList"
-          @sendFrontSkillList="sendFrontSkillList"
-          @sendBackSkillList="sendBackSkillList"
-          @sendDbSkillList="sendDbSkillList"
-          @sendMobileSkillList="sendMobileSkillList"
-          @sendDevOpsSkillList="sendDevOpsSkillList"
-          @sendCollaboSkillList="sendCollaboSkillList"
           @sendSkillList="sendSkillList"
           ref="selectArea"
         />
@@ -83,34 +76,6 @@ export default {
     showLogo: true,
   }),
   methods: {
-    sendLangSkillList(skillList) {
-      this.langHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.langMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
-    sendFrontSkillList(skillList) {
-      this.frontHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.frontMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
-    sendBackSkillList(skillList) {
-      this.backHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.backMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
-    sendDbSkillList(skillList) {
-      this.dbHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.dbMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
-    sendMobileSkillList(skillList) {
-      this.mobileHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.mobileMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
-    sendDevOpsSkillList(skillList) {
-      this.devOpsHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.devOpsMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
-    sendCollaboSkillList(skillList) {
-      this.collaboHtmlSkillList = listToHtml(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-      this.collaboMarkdownSkillList = listToMarkdown(skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-    },
     sendSkillList(value) {
       switch (value.skill) {
         case 'lang':
