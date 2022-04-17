@@ -1,13 +1,13 @@
 <template>
     <v-card>
       <v-card-text>
-        <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" @selectSkillList="sendSkillList" ref="lang"/>
-        <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList" @selectSkillList="sendSkillList" ref="front"/>
-        <BackSkillCheckBox @selectBackSkillList="sendBackSkillList" @selectSkillList="sendSkillList" ref="back"/>
-        <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList" @selectSkillList="sendSkillList" ref="mobile"/>
-        <DbSkillCheckBox @selectDbSkillList="sendDbSkillList" @selectSkillList="sendSkillList" ref="database"/>
-        <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList" @selectSkillList="sendSkillList" ref="devOps"/>
-        <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" @selectSkillList="sendSkillList" ref="collabo"/>
+        <LangSkillCheckBox @selectSkillList="sendSkillList" ref="lang"/>
+        <FrontSkillCheckBox @selectSkillList="sendSkillList" ref="front"/>
+        <BackSkillCheckBox @selectSkillList="sendSkillList" ref="back"/>
+        <MobileSkillCheckBox @selectSkillList="sendSkillList" ref="mobile"/>
+        <DbSkillCheckBox @selectSkillList="sendSkillList" ref="database"/>
+        <DevOpsSkillCheckBox @selectSkillList="sendSkillList" ref="devOps"/>
+        <CollaboSkillCheckBox @selectSkillList="sendSkillList" ref="collabo"/>
       </v-card-text>
     </v-card>
 </template>
@@ -32,27 +32,6 @@ export default {
     CollaboSkillCheckBox,
   },
   methods: {
-    sendFrontSkillList(skillList) {
-      this.$emit('sendFrontSkillList', skillList);
-    },
-    sendLangSkillList(skillList) {
-      this.$emit('sendLangSkillList', skillList);
-    },
-    sendBackSkillList(skillList) {
-      this.$emit('sendBackSkillList', skillList);
-    },
-    sendDbSkillList(skillList) {
-      this.$emit('sendDbSkillList', skillList);
-    },
-    sendMobileSkillList(skillList) {
-      this.$emit('sendMobileSkillList', skillList);
-    },
-    sendDevOpsSkillList(skillList) {
-      this.$emit('sendDevOpsSkillList', skillList);
-    },
-    sendCollaboSkillList(skillList) {
-      this.$emit('sendCollaboSkillList', skillList);
-    },
     sendSkillList(value) {
       this.$emit('sendSkillList', value);
     },
