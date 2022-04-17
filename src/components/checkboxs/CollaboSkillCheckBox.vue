@@ -39,6 +39,7 @@ export default {
   methods: {
     onChange() {
       this.$emit('selectCollaboSkillList', this.skillList);
+      this.$emit('selectSkillList', {'skill': 'collabo', 'skillList': this.skillList});
     },
     executeResetCommand() {
       this.skillList = [];

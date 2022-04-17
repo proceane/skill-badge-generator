@@ -39,6 +39,7 @@ export default {
   methods: {
     onChange() {
       this.$emit('selectDevOpsSkillList', this.skillList);
+      this.$emit('selectSkillList', {'skill': 'devOps', 'skillList': this.skillList});
     },
     executeResetCommand() {
       this.skillList = [];
