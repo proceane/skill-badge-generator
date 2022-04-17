@@ -1,13 +1,13 @@
 <template>
     <v-card>
       <v-card-text>
-        <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" ref="lang"/>
-        <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList" ref="front"/>
-        <BackSkillCheckBox @selectBackSkillList="sendBackSkillList" ref="back"/>
-        <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList" ref="mobile"/>
-        <DbSkillCheckBox @selectDbSkillList="sendDbSkillList" ref="database"/>
-        <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList" ref="devOps"/>
-        <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" ref="collabo"/>
+        <LangSkillCheckBox @selectLangSkillList="sendLangSkillList" @selectSkillList="sendSkillList" ref="lang"/>
+        <FrontSkillCheckBox @selectFrontSkillList="sendFrontSkillList" @selectSkillList="sendSkillList" ref="front"/>
+        <BackSkillCheckBox @selectBackSkillList="sendBackSkillList" @selectSkillList="sendSkillList" ref="back"/>
+        <MobileSkillCheckBox @selectMobileSkillList="sendMobileSkillList" @selectSkillList="sendSkillList" ref="mobile"/>
+        <DbSkillCheckBox @selectDbSkillList="sendDbSkillList" @selectSkillList="sendSkillList" ref="database"/>
+        <DevOpsSkillCheckBox @selectDevOpsSkillList="sendDevOpsSkillList" @selectSkillList="sendSkillList" ref="devOps"/>
+        <CollaboSkillCheckBox @selectCollaboSkillList="sendCollaboSkillList" @selectSkillList="sendSkillList" ref="collabo"/>
       </v-card-text>
     </v-card>
 </template>
@@ -52,6 +52,9 @@ export default {
     },
     sendCollaboSkillList(skillList) {
       this.$emit('sendCollaboSkillList', skillList);
+    },
+    sendSkillList(value) {
+      this.$emit('sendSkillList', value);
     },
     executeResetCommand() {
       this.$refs.lang.executeResetCommand();
