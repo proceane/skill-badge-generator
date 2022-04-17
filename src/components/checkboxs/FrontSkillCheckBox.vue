@@ -38,7 +38,6 @@ export default {
   }),
   methods: {
     onChange() {
-      this.$emit('selectFrontSkillList', this.skillList);
       this.$emit('selectSkillList', {'skill': 'front', 'skillList': this.skillList});
     },
     executeResetCommand() {
