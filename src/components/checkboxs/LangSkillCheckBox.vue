@@ -39,6 +39,7 @@ export default {
   methods: {
     onChange() {
       this.$emit('selectLangSkillList', this.skillList);
+      this.$emit('selectSkillList', {'skill': 'lang', 'skillList': this.skillList});
     },
     executeResetCommand() {
       this.skillList = [];

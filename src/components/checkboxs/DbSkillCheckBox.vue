@@ -39,6 +39,7 @@ export default {
   methods: {
     onChange() {
       this.$emit('selectDbSkillList', this.skillList);
+      this.$emit('selectSkillList', {'skill': 'database', 'skillList': this.skillList});
     },
     executeResetCommand() {
       this.skillList = [];
