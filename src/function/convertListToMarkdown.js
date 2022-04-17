@@ -11,6 +11,11 @@ const methods = {
       + "\">\n"
       );
     }
+    
+    if (result == '') {
+      return null;
+    }
+
     result += "<br>";
     return result
   }
