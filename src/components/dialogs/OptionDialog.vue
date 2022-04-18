@@ -92,7 +92,7 @@ export default {
   }),
   methods: {
     setSampleBadgeColor(color) {
-      this.sampleBadgeColor = color.substring(1);
+      this.sampleBadgeColor = color.substring(1) == 'FFFFFF' ? 'blue' : color.substring(1);
       this.$emit("sendBadgeColor", color.substring(1));
     },
     setSampleBadgeStyle(style) {
