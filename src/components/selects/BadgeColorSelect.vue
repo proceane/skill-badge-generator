@@ -1,6 +1,7 @@
 <template>
   <v-text-field
     label="Badge Color"
+    hint="White Color(#FFFFFF) is set as the default color for the dev-skill"
     :value="color"
   >
     <template v-slot:append>
