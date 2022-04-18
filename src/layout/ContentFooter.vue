@@ -3,12 +3,7 @@
     <v-col 
       class="text-center"
       cols="12">
-      <v-btn
-        href="#"
-        text
-      >
-        <v-icon>mdi-github</v-icon>
-      </v-btn>
+      Made By <a href="https://github.com/proceane" target="_blank">@proceane</a>
     </v-col>
   </v-footer>
 </template>
