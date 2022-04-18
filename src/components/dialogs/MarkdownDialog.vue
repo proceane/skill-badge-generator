@@ -34,8 +34,8 @@
               {{ titleSwitch && langSkillList != null ? '### Language\n' : ''}}
               <br v-if="titleSwitch && langSkillList != null">
               {{langSkillList}}
+              <br v-if="titleSwitch && langSkillList != null">
 
-              <br v-if="titleSwitch && frontSkillList != null">
               {{ titleSwitch && frontSkillList != null ? '\n### Front-End\n' : ''}}
               <br v-if="titleSwitch && frontSkillList != null">
               {{frontSkillList}}

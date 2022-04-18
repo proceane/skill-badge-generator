@@ -36,7 +36,6 @@ export default {
     MarkdownDialog,
   },
   data: () => ({
-    generateDialog: false,
     titleSwitch: false,
   }),
   props: {
