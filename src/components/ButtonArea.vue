@@ -62,17 +62,6 @@ export default {
       type: String
     },
   },
-  computed: {
-    existList() {
-      return this.langSkillList != null || 
-            this.frontSkillList != null || 
-            this.backSkillList != null || 
-            this.mobileSkillList != null ||
-            this.dbSkillList != null ||
-            this.devOpsSkillList != null ||
-            this.collaboSkillList != null;
-    },
-  },
   methods: {
     executeResetCommand() {
       this.$emit("executeResetCommand");
