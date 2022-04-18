@@ -75,6 +75,8 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+    <OptionDialog></OptionDialog>
     
     <v-spacer></v-spacer>
 
@@ -159,11 +161,13 @@
 <script>
 import BadgeStyleSelect from './selects/BadgeStyleSelect';
 import BadgeColorSelect from './selects/BadgeColorSelect';
+import OptionDialog from './dialogs/OptionDialog';
 
 export default {
   components: {
     BadgeStyleSelect,
     BadgeColorSelect,
+    OptionDialog,
   },
   data: () => ({
     generateDialog: false,
