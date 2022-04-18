@@ -7,6 +7,8 @@
     <OptionDialog
       @isShowTitle="sendIsShowTitle"
       @isShowLogo="sendIsShowLogo"
+      @sendBadgeColor="sendBadgeColor"
+      @sendBadgeStyle="sendBadgeStyle"
     ></OptionDialog>
     
     <v-spacer></v-spacer>
@@ -144,37 +146,11 @@ export default {
     executeResetCommand() {
       this.$emit("executeResetCommand");
     },
-    setSampleBadgeColor(color) {
-      this.sampleBadgeColor = color.substring(1);
-      this.$emit("sendBadgeColor", color.substring(1));
+    sendBadgeColor(color) {
+      this.$emit("sendBadgeColor", color);
     },
-    setSampleBadgeStyle(style) {
-      this.sampleBadgeStyle = style;
-      this.setSampleBadgeSize(style, this.logoSwitch);
+    sendBadgeStyle(style) {
       this.$emit("sendBadgeStyle", style);
-    },
-    setSampleBadgeSize(style, existLogo) {
-      switch (style) {
-        case 'plastic':
-          this.sampleBadgeMaxWidth = existLogo ? "67px" : "49px";
-          this.sampleBadgeMaxHeight = "18px";
-          break;
-        case 'flat': 
-        case 'flat-square':
-          this.sampleBadgeMaxWidth = existLogo ? "67px" : "49px";
-          this.sampleBadgeMaxHeight = "20px";
-          break;
-        case 'for-the-badge':
-          this.sampleBadgeMaxWidth = existLogo ? "96px" : "76px";
-          this.sampleBadgeMaxHeight = "28px";
-          break;
-        case 'social':
-          this.sampleBadgeMaxWidth = existLogo ? "79px" : "65px";
-          this.sampleBadgeMaxHeight = "20px";
-          break;
-      }
-
-      this.sendIsShowLogo(existLogo);
     },
     sendIsShowTitle(isShow) {
       this.$emit("isShowTitle", isShow);
