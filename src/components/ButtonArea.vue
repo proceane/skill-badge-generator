@@ -4,7 +4,10 @@
       @click="executeResetCommand"
     >Reset</v-btn>
 
-    <OptionDialog></OptionDialog>
+    <OptionDialog
+      @isShowTitle="sendIsShowTitle"
+      @isShowLogo="sendIsShowLogo"
+    ></OptionDialog>
     
     <v-spacer></v-spacer>
 
