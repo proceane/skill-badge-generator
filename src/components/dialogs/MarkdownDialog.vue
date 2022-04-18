@@ -15,6 +15,12 @@
     <v-card>
       <v-card-title>
         <span generateDialog="text-h5">Generate Markdown</span>
+        <v-spacer></v-spacer>
+        <v-btn 
+          @click="copyMarkdown"
+        >
+          Copy
+        </v-btn>
       </v-card-title>
       <v-card-text>
         <v-container>
@@ -23,41 +29,41 @@
               lang="markdown"
               v-if="existList"
               style="width: 100%;"
+              ref="markdownText"
             >
-              {{ titleSwitch && langSkillList != null ? '### Language' : ''}}
+              {{ titleSwitch && langSkillList != null ? '### Language\n' : ''}}
               <br v-if="titleSwitch && langSkillList != null">
               {{langSkillList}}
 
               <br v-if="titleSwitch && frontSkillList != null">
-              {{ titleSwitch && frontSkillList != null ? '### Front-End' : ''}}
+              {{ titleSwitch && frontSkillList != null ? '\n### Front-End\n' : ''}}
               <br v-if="titleSwitch && frontSkillList != null">
               {{frontSkillList}}
 
               <br v-if="titleSwitch && backSkillList != null">
-              {{ titleSwitch && backSkillList != null ? '### Back-End' : ''}}
+              {{ titleSwitch && backSkillList != null ? '\n### Back-End\n' : ''}}
               <br v-if="titleSwitch && backSkillList != null">
               {{backSkillList}}
 
               <br v-if="titleSwitch && mobileSkillList != null">
-              {{ titleSwitch && mobileSkillList != null ? '### Mobile' : ''}}
+              {{ titleSwitch && mobileSkillList != null ? '\n### Mobile\n' : ''}}
               <br v-if="titleSwitch && mobileSkillList != null">
               {{mobileSkillList}}
 
               <br v-if="titleSwitch && dbSkillList != null">
-              {{ titleSwitch && dbSkillList != null ? '### Database' : ''}}
+              {{ titleSwitch && dbSkillList != null ? '\n### Database\n' : ''}}
               <br v-if="titleSwitch && dbSkillList != null">
               {{dbSkillList}}
               
               <br v-if="titleSwitch && devOpsSkillList != null">
-              {{ titleSwitch && devOpsSkillList != null ? '### DevOps' : ''}}
+              {{ titleSwitch && devOpsSkillList != null ? '\n### DevOps\n' : ''}}
               <br v-if="titleSwitch && devOpsSkillList != null">
               {{devOpsSkillList}}
 
               <br v-if="titleSwitch && collaboSkillList != null">
-              {{ titleSwitch && collaboSkillList != null ? '### Collaborate' : ''}}
+              {{ titleSwitch && collaboSkillList != null ? '\n### Collaborate\n' : ''}}
               <br v-if="titleSwitch && collaboSkillList != null">
               {{collaboSkillList}}
-
             </code>
           </v-row>
         </v-container>
@@ -116,6 +122,12 @@ export default {
             this.dbSkillList != null ||
             this.devOpsSkillList != null ||
             this.collaboSkillList != null;
+    },
+  },
+  methods: {
+    copyMarkdown() {
+      navigator.clipboard.writeText(this.$refs.markdownText.textContent.trim());
+      alert("copy complete!");
     },
   },
 }
