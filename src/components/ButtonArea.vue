@@ -100,13 +100,6 @@ export default {
   },
   data: () => ({
     generateDialog: false,
-    optionDialog: false,
-    titleSwitch: false,
-    logoSwitch: true,
-    sampleBadgeColor: "blue",
-    sampleBadgeStyle: "flat-square",
-    sampleBadgeMaxWidth: "67px",
-    sampleBadgeMaxHeight: "20px",
   }),
   props: {
     langSkillList: {
