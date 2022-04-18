@@ -26,12 +26,12 @@ I created this project to conveniently make the development stack badge, which i
 ### Installation
 1. Clone the repo
    ```sh
-   git clone https://github.com/<your-username>/dev-skill-badge-generator.git
+   git clone https://github.com/<your-username>/skill-badge-generator.git
    ```
 2. Install NPM packages
    ```sh
 
-   cd dev-skill-badge-generator
+   cd skill-badge-generator
     
    npm install
    ```
