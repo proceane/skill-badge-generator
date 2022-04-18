@@ -103,6 +103,9 @@ export default {
     collaboSkillList: {
       type: String
     },
+    titleSwitch: {
+      type: Boolean
+    },
   },
   computed: {
     existList() {
