@@ -1,4 +1,5 @@
 [
+	{"logo": ".NET", "skill": ".NET", "color": "512BD4"},
 	{"logo": "Apollo GraphQL", "skill": "Apollo GraphQL", "color": "311C87"},
 	{"logo": "", "skill": "Armeria", "color": "FF0089"},
 	{"logo": "", "skill": "ASP.NET", "color": "1483C7"},
