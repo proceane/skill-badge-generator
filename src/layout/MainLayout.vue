@@ -19,13 +19,13 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" lg="6">
+      <v-col cols="12" lg="6" md="6">
         <SelectArea 
           @sendSkillList="sendSkillList"
           ref="selectArea"
         />
       </v-col>
-      <v-col cols="12" lg="6">
+      <v-col cols="12" lg="6" md="6">
         <PreviewArea 
           :langSkillList="langHtmlSkillList" 
           :frontSkillList="frontHtmlSkillList" 
