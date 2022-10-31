@@ -21,6 +21,7 @@
       :mobileSkillList="mobileSkillList"
       :devOpsSkillList="devOpsSkillList"
       :collaboSkillList="collaboSkillList"
+      :allSkillList="allSkillList"
       :titleSwitch="titleSwitch"
     ></MarkdownDialog>
   </v-row>
@@ -58,6 +59,9 @@ export default {
       type: String
     },
     collaboSkillList: {
+      type: String
+    },
+    allSkillList: {
       type: String
     },
   },

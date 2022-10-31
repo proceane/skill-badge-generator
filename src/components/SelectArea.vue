@@ -8,6 +8,7 @@
         <DbSkillCheckBox @selectSkillList="sendSkillList" ref="database"/>
         <DevOpsSkillCheckBox @selectSkillList="sendSkillList" ref="devOps"/>
         <CollaboSkillCheckBox @selectSkillList="sendSkillList" ref="collabo"/>
+        <AllSkillCheckBox @selectSkillList="sendSkillList" ref="all"/>
       </v-card-text>
     </v-card>
 </template>
@@ -20,6 +21,7 @@ import DbSkillCheckBox from './checkboxs/DbSkillCheckBox';
 import MobileSkillCheckBox from './checkboxs/MobileSkillCheckBox';
 import DevOpsSkillCheckBox from './checkboxs/DevOpsSkillCheckBox';
 import CollaboSkillCheckBox from './checkboxs/CollaboSkillCheckBox';
+import AllSkillCheckBox from './checkboxs/AllSkillCheckBox.vue';
 
 export default {
   components: {
@@ -30,6 +32,7 @@ export default {
     MobileSkillCheckBox,
     DevOpsSkillCheckBox,
     CollaboSkillCheckBox,
+    AllSkillCheckBox,
   },
   methods: {
     sendSkillList(value) {
@@ -43,6 +46,7 @@ export default {
       this.$refs.database.executeResetCommand();
       this.$refs.devOps.executeResetCommand();
       this.$refs.collabo.executeResetCommand();
+      this.$refs.all.executeResetCommand();
     },
     executeResendCommand() {
       this.$refs.lang.onChange();
@@ -52,6 +56,7 @@ export default {
       this.$refs.database.onChange();
       this.$refs.devOps.onChange();
       this.$refs.collabo.onChange();
+      this.$refs.all.onChange();
     },
   },
 }

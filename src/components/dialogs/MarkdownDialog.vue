@@ -31,6 +31,12 @@
               style="width: 100%;"
               ref="markdownText"
             >
+
+              {{ titleSwitch && allSkillList != null ? '### All\n' : ''}}
+              <br v-if="titleSwitch && allSkillList != null">
+              {{allSkillList}}
+              <br v-if="titleSwitch && allSkillList != null">
+              
               {{ titleSwitch && langSkillList != null ? '### Language\n' : ''}}
               <br v-if="titleSwitch && langSkillList != null">
               {{langSkillList}}
@@ -109,6 +115,9 @@ export default {
     collaboSkillList: {
       type: String
     },
+    allSkillList: {
+      type: String
+    },
     titleSwitch: {
       type: Boolean
     },
@@ -121,7 +130,8 @@ export default {
             this.mobileSkillList != null ||
             this.dbSkillList != null ||
             this.devOpsSkillList != null ||
-            this.collaboSkillList != null;
+            this.collaboSkillList != null ||
+            this.allSkillList != null;
     },
   },
   methods: {

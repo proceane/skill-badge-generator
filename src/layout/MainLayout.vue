@@ -10,6 +10,7 @@
         :mobileSkillList="mobileMarkdownSkillList"
         :devOpsSkillList="devOpsMarkdownSkillList"
         :collaboSkillList="collaboMarkdownSkillList"
+        :allSkillList="allMarkdownSkillList"
         @executeResetCommand="executeResetCommand"
         @isShowTitle="sendIsShowTitle"
         @sendBadgeColor="setBadgeColor"
@@ -34,6 +35,7 @@
           :mobileSkillList="mobileHtmlSkillList"
           :devOpsSkillList="devOpsHtmlSkillList"
           :collaboSkillList="collaboHtmlSkillList"
+          :allSkillList="allHtmlSkillList"
           ref="previewArea"
         />
       </v-col>
@@ -71,6 +73,8 @@ export default {
     devOpsMarkdownSkillList: null,
     collaboHtmlSkillList: null,
     collaboMarkdownSkillList: null,
+    allHtmlSkillList: null,
+    allMarkdownSkillList: null,
     badgeColor: 'FFFFFF',
     badgeStyle: 'flat-square',
     showLogo: true,
@@ -106,6 +110,10 @@ export default {
           this.collaboHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
           this.collaboMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
           break;
+        case 'all':
+          this.allHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
+          this.allMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
+          break;
         default:
           break;
       }
@@ -125,6 +133,8 @@ export default {
       this.devOpsMarkdownSkillList = null;
       this.collaboHtmlSkillList = null;
       this.collaboMarkdownSkillList = null;
+      this.allHtmlSkillList = null;
+      this.allMarkdownSkillList = null;
       this.$refs.selectArea.executeResetCommand();
     },
     sendIsShowTitle(isShow) {
