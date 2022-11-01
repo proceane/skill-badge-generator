@@ -3,6 +3,12 @@
     <v-card-title>Preview</v-card-title>
 
     <v-card-text>
+      <h3 class="mb-2" v-if="isShow && allSkillList != null">All</h3>
+      <div 
+        v-html="allSkillList"
+        v-if="allSkillList != null"
+      ></div>
+
       <h3 class="mb-2" v-if="isShow && langSkillList != null">Language</h3>
       <div 
         v-html="langSkillList"
@@ -82,6 +88,9 @@ export default {
     collaboSkillList: {
       type: String
     },
+    allSkillList: {
+      type: String
+    }
   },
   methods: {
     sendIsShowTitle(isShow) {
