@@ -31,45 +31,7 @@
               style="width: 100%;"
               ref="markdownText"
             >
-
-              {{ titleSwitch && allSkillList != null ? '### All\n' : ''}}
-              <br v-if="titleSwitch && allSkillList != null">
-              {{allSkillList}}
-              <br v-if="titleSwitch && allSkillList != null">
-              
-              {{ titleSwitch && langSkillList != null ? '### Language\n' : ''}}
-              <br v-if="titleSwitch && langSkillList != null">
-              {{langSkillList}}
-              <br v-if="titleSwitch && langSkillList != null">
-
-              {{ titleSwitch && frontSkillList != null ? '\n### Front-End\n' : ''}}
-              <br v-if="titleSwitch && frontSkillList != null">
-              {{frontSkillList}}
-
-              <br v-if="titleSwitch && backSkillList != null">
-              {{ titleSwitch && backSkillList != null ? '\n### Back-End\n' : ''}}
-              <br v-if="titleSwitch && backSkillList != null">
-              {{backSkillList}}
-
-              <br v-if="titleSwitch && mobileSkillList != null">
-              {{ titleSwitch && mobileSkillList != null ? '\n### Mobile\n' : ''}}
-              <br v-if="titleSwitch && mobileSkillList != null">
-              {{mobileSkillList}}
-
-              <br v-if="titleSwitch && dbSkillList != null">
-              {{ titleSwitch && dbSkillList != null ? '\n### Database\n' : ''}}
-              <br v-if="titleSwitch && dbSkillList != null">
-              {{dbSkillList}}
-              
-              <br v-if="titleSwitch && devOpsSkillList != null">
-              {{ titleSwitch && devOpsSkillList != null ? '\n### DevOps\n' : ''}}
-              <br v-if="titleSwitch && devOpsSkillList != null">
-              {{devOpsSkillList}}
-
-              <br v-if="titleSwitch && collaboSkillList != null">
-              {{ titleSwitch && collaboSkillList != null ? '\n### Collaborate\n' : ''}}
-              <br v-if="titleSwitch && collaboSkillList != null">
-              {{collaboSkillList}}
+              {{allSkillList}} 
             </code>
           </v-row>
         </v-container>
@@ -94,44 +56,13 @@ export default {
     generateDialog: false,
   }),
   props: {
-    langSkillList: {
-      type: String
-    },
-    frontSkillList: {
-      type: String
-    },
-    backSkillList: {
-      type: String
-    },
-    dbSkillList: {
-      type: String
-    },
-    mobileSkillList: {
-      type: String
-    },
-    devOpsSkillList: {
-      type: String
-    },
-    collaboSkillList: {
-      type: String
-    },
     allSkillList: {
       type: String
-    },
-    titleSwitch: {
-      type: Boolean
     },
   },
   computed: {
     existList() {
-      return this.langSkillList != null || 
-            this.frontSkillList != null || 
-            this.backSkillList != null || 
-            this.mobileSkillList != null ||
-            this.dbSkillList != null ||
-            this.devOpsSkillList != null ||
-            this.collaboSkillList != null ||
-            this.allSkillList != null;
+      return this.allSkillList != null;
     },
   },
   methods: {

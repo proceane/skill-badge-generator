@@ -14,15 +14,7 @@
     <v-spacer></v-spacer>
 
     <MarkdownDialog
-      :langSkillList="langSkillList"
-      :frontSkillList="frontSkillList" 
-      :backSkillList="backSkillList"
-      :dbSkillList="dbSkillList"
-      :mobileSkillList="mobileSkillList"
-      :devOpsSkillList="devOpsSkillList"
-      :collaboSkillList="collaboSkillList"
       :allSkillList="allSkillList"
-      :titleSwitch="titleSwitch"
     ></MarkdownDialog>
   </v-row>
 </template>
