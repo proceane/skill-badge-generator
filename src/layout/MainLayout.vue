@@ -2,21 +2,13 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12" lg="12">
-      <ButtonArea 
-        :langSkillList="langMarkdownSkillList"
-        :frontSkillList="frontMarkdownSkillList" 
-        :backSkillList="backMarkdownSkillList"
-        :dbSkillList="dbMarkdownSkillList"
-        :mobileSkillList="mobileMarkdownSkillList"
-        :devOpsSkillList="devOpsMarkdownSkillList"
-        :collaboSkillList="collaboMarkdownSkillList"
-        :allSkillList="allMarkdownSkillList"
-        @executeResetCommand="executeResetCommand"
-        @isShowTitle="sendIsShowTitle"
-        @sendBadgeColor="setBadgeColor"
-        @sendBadgeStyle="setBadgeStyle"
-        @isShowLogo="setShowLogo"
-      />
+        <ButtonArea 
+          :allSkillList="allMarkdownSkillList"
+          @executeResetCommand="executeResetCommand"
+          @sendBadgeColor="setBadgeColor"
+          @sendBadgeStyle="setBadgeStyle"
+          @isShowLogo="setShowLogo"
+        />
       </v-col>
     </v-row>
     <v-row>
@@ -28,13 +20,6 @@
       </v-col>
       <v-col cols="12" lg="6" md="6">
         <PreviewArea 
-          :langSkillList="langHtmlSkillList" 
-          :frontSkillList="frontHtmlSkillList" 
-          :backSkillList="backHtmlSkillList"
-          :dbSkillList="dbHtmlSkillList"
-          :mobileSkillList="mobileHtmlSkillList"
-          :devOpsSkillList="devOpsHtmlSkillList"
-          :collaboSkillList="collaboHtmlSkillList"
           :allSkillList="allHtmlSkillList"
           ref="previewArea"
         />
@@ -59,20 +44,6 @@ export default {
     PreviewArea,
   },
   data: () => ({
-    langHtmlSkillList: null,
-    langMarkdownSkillList: null,
-    frontHtmlSkillList: null,
-    frontMarkdownSkillList: null,
-    backHtmlSkillList: null,
-    backMarkdownSkillList: null,
-    dbHtmlSkillList: null,
-    dbMarkdownSkillList: null,
-    mobileHtmlSkillList: null,
-    mobileMarkdownSkillList: null,
-    devOpsHtmlSkillList: null,
-    devOpsMarkdownSkillList: null,
-    collaboHtmlSkillList: null,
-    collaboMarkdownSkillList: null,
     allHtmlSkillList: null,
     allMarkdownSkillList: null,
     badgeColor: 'FFFFFF',
@@ -81,64 +52,13 @@ export default {
   }),
   methods: {
     sendSkillList(value) {
-      switch (value.skill) {
-        case 'lang':
-          this.langHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.langMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'front':
-          this.frontHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.frontMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'back':
-          this.backHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.backMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'mobile':
-          this.mobileHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.mobileMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'database':
-          this.dbHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.dbMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'devOps':
-          this.devOpsHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.devOpsMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'collabo':
-          this.collaboHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.collaboMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        case 'all':
-          this.allHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          this.allMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
-          break;
-        default:
-          break;
-      }
+      this.allHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
+      this.allMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
     executeResetCommand() {
-      this.langHtmlSkillList = null;
-      this.langMarkdownSkillList = null;
-      this.frontHtmlSkillList = null;
-      this.frontMarkdownSkillList = null;
-      this.backHtmlSkillList = null;
-      this.backMarkdownSkillList = null;
-      this.mobileHtmlSkillList = null;
-      this.mobileMarkdownSkillList = null;
-      this.dbHtmlSkillList = null;
-      this.dbMarkdownSkillList = null;
-      this.devOpsHtmlSkillList = null;
-      this.devOpsMarkdownSkillList = null;
-      this.collaboHtmlSkillList = null;
-      this.collaboMarkdownSkillList = null;
       this.allHtmlSkillList = null;
       this.allMarkdownSkillList = null;
       this.$refs.selectArea.executeResetCommand();
-    },
-    sendIsShowTitle(isShow) {
-      this.$refs.previewArea.sendIsShowTitle(isShow);
     },
     setBadgeColor(color) {
       this.badgeColor = color;
