@@ -5,7 +5,6 @@
     >Reset</v-btn>
 
     <OptionDialog
-      @isShowTitle="sendIsShowTitle"
       @isShowLogo="sendIsShowLogo"
       @sendBadgeColor="sendBadgeColor"
       @sendBadgeStyle="sendBadgeStyle"
@@ -66,10 +65,6 @@ export default {
     },
     sendBadgeStyle(style) {
       this.$emit("sendBadgeStyle", style);
-    },
-    sendIsShowTitle(isShow) {
-      this.titleSwitch = isShow;
-      this.$emit("isShowTitle", isShow);
     },
     sendIsShowLogo(isShow) {
       this.$emit("isShowLogo", isShow);

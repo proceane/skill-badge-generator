@@ -113,9 +113,6 @@ export default {
 
       this.sendIsShowLogo(existLogo);
     },
-    sendIsShowTitle(isShow) {
-      this.$emit("isShowTitle", isShow);
-    },
     sendIsShowLogo(isShow) {
       this.$emit("isShowLogo", isShow);
     },

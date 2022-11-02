@@ -15,7 +15,7 @@
 <script>
 export default {
   data: () => ({
-    isShow: false,
+
   }),
   props: {
     allSkillList: {
@@ -23,9 +23,7 @@ export default {
     }
   },
   methods: {
-    sendIsShowTitle(isShow) {
-      this.isShow = isShow;
-    } 
+    
   }
 }
 </script>
