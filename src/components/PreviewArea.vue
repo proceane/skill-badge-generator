@@ -19,27 +19,6 @@ export default {
     isShow: false,
   }),
   props: {
-    langSkillList: {
-      type: String
-    },
-    frontSkillList: {
-      type: String
-    },
-    backSkillList: {
-      type: String
-    },
-    dbSkillList: {
-      type: String
-    },
-    mobileSkillList: {
-      type: String
-    },
-    devOpsSkillList: {
-      type: String
-    },
-    collaboSkillList: {
-      type: String
-    },
     allSkillList: {
       type: String
     }
