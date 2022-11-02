@@ -59,9 +59,6 @@ export default {
     allSkillList: {
       type: String
     },
-    titleSwitch: {
-      type: Boolean
-    },
   },
   computed: {
     existList() {
