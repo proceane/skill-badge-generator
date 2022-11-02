@@ -20,16 +20,6 @@
               md="6"
             >
               <v-switch
-                v-model="titleSwitch"
-                label="Title in Markdown"
-                @change="sendIsShowTitle"
-              ></v-switch>
-            </v-col>
-            <v-col
-              cols="12"
-              md="6"
-            >
-              <v-switch
                 v-model="logoSwitch"
                 label="Logo in Badge"
                 @change="setSampleBadgeSize(sampleBadgeStyle, logoSwitch)"
@@ -122,9 +112,6 @@ export default {
       }
 
       this.sendIsShowLogo(existLogo);
-    },
-    sendIsShowTitle(isShow) {
-      this.$emit("isShowTitle", isShow);
     },
     sendIsShowLogo(isShow) {
       this.$emit("isShowLogo", isShow);
