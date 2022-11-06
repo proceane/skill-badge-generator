@@ -17,7 +17,7 @@
 
 ## About The Project
 
-![dev-skill-generator_3](https://user-images.githubusercontent.com/62143949/163757107-9bf09e78-c981-4d70-a568-cc8638cdc70e.gif)
+![dev-skill-generator_3](https://user-images.githubusercontent.com/62143949/200159154-4dc987bc-3641-492a-a19d-468c14b07206.gif)
 
 I created this project to conveniently make the development stack badge, which is often used in github profiles.:hammer_and_wrench:	
 
