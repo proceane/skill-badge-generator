@@ -7,17 +7,10 @@ assignees: ''
 
 ---
 
-Classification
-- [ ] Language
-- [ ] Front-End
-- [ ] Back-End
-- [ ] Mobile
-- [ ] Database
-- [ ] DevOps
-- [ ] Collaborate
-
-Skill Name(used as a common name)
+### Skill Name(used as a common name)
 -> 
 
-Logo Name(Find the icon name that matches the skill in [simple icon](https://simpleicons.org/)) 
-->
+### Interested in adding this skill?
+Yes / No
+
+(If you choice Yes, this issue will be assigned to you.)
