@@ -17,6 +17,12 @@
           @sendSkillList="sendSkillList"
           ref="selectArea"
         />
+        <div
+          class="text-caption ml-2 mt-2"
+        >
+          No skill in list? 
+          <a href="https://github.com/proceane/skill-badge-generator/issues/new/choose" target="_blank">Request in here</a>
+        </div>
       </v-col>
       <v-col cols="12" lg="6" md="6">
         <PreviewArea 
