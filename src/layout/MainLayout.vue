@@ -13,7 +13,7 @@
     </v-row>
     <v-row>
       <v-col cols="12" lg="6" md="6">
-        <div class="text-caption ml-2 mt-2">
+        <div class="text-caption ml-2">
           No skill in list? 
           <a href="https://github.com/proceane/skill-badge-generator/issues/new/choose" target="_blank">Request in here</a>
         </div>

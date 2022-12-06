@@ -10,3 +10,13 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'commit message'`)
 4. Push to the Branch (`git push origin <new-branch-name>`)
 5. Open a Pull Request
+
+## Guide
+### Add Skill
+Add it to the bottom of `src/static/dev_skills.json`.  
+
+`skill` is the name displayed on the badge.  
+`logo` and `color` are on https://simpleicons.org/.  
+If there is no search result for skill:
+- `logo': blank
+- `color`: Pick the color from the skill logo image.
