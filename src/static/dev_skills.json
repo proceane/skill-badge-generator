@@ -166,5 +166,6 @@
 	{"logo": "Realm", "skill": "Realm", "color": "39477F"},
 	{"logo": "", "skill": "Retrofit", "color": "48B983"},
 	{"logo": "", "skill": "RIBs", "color": "000000"},
-	{"logo": "", "skill": "SnapKit", "color": "006EC3"}
+	{"logo": "", "skill": "SnapKit", "color": "006EC3"},
+	{"logo": "", "skill": "Pinia", "color": "CF4647"}
 ]

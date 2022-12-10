@@ -17,7 +17,7 @@
           No skill in list? 
           <a href="https://github.com/proceane/skill-badge-generator/issues/new/choose" target="_blank">Request in here</a>
         </div>
-        <SelectArea 
+        <SelectArea
           @sendSkillList="sendSkillList"
           ref="selectArea"
         />
