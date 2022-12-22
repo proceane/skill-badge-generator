@@ -54,6 +54,10 @@ npm run lint
 
 If you are interested in contributing to this project, please take a look at [CONTRIBUTING.md](https://github.com/proceane/skill-badge-generator/blob/master/CONTRIBUTING.md).
 
+## Contributors
+
+<img src="https://contributors-img.web.app/image?repo=proceane/skill-badge-generator" />
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
