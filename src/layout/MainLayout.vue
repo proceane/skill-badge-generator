@@ -21,6 +21,7 @@
           @sendSkillList="sendSkillList"
           ref="selectArea"
         />
+        <CustomArea/>
       </v-col>
       <v-col cols="12" lg="6" md="6">
         <PreviewArea 
@@ -36,6 +37,7 @@
 import ButtonArea from '../components/ButtonArea';
 import SelectArea from '../components/SelectArea';
 import PreviewArea from '../components/PreviewArea';
+import CustomArea from '../components/CustomArea';
 
 import listToHtml from '../function/convertListToHtml';
 import listToMarkdown from '../function/convertListToMarkdown';
@@ -46,6 +48,7 @@ export default {
     ButtonArea,
     SelectArea,
     PreviewArea,
+    CustomArea,
   },
   data: () => ({
     allHtmlSkillList: null,
