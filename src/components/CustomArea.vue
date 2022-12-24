@@ -17,7 +17,7 @@
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="4" lg="4">
-              <BadgeColorSelect/>
+              <BadgeColorSelect @selectColor="setCustomBadgeColor"/>
             </v-col>
           </v-row>
         </v-expansion-panel-content>
@@ -36,6 +36,11 @@ export default {
   data: () => ({
     color: '#FFFFFF',
   }),
-  
+  methods: {
+    setCustomBadgeColor(color) {
+      this.color = color.substring(1) == 'FFFFFF' ? 'blue' : color.substring(1);
+      this.$emit("sendBadgeColor", color.substring(1));
+    },
+  },
 }
 </script>
