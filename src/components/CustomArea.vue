@@ -6,18 +6,32 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-row>
-            <v-col cols="12" md="4" lg="4">
+            <v-col cols="12" md="3" lg="3">
               <v-text-field
+                v-model="name"
                 label="name"
+                clearable
               ></v-text-field>
             </v-col>
-            <v-col cols="12" md="4" lg="4">
+            <v-col cols="12" md="3" lg="3">
               <v-text-field
+                v-model="logo"
                 label="logo"
+                hint="https://simpleicons.org/"
+                persistent-hint
+                clearable
               ></v-text-field>
             </v-col>
-            <v-col cols="12" md="4" lg="4">
+            <v-col cols="12" md="3" lg="3">
               <BadgeColorSelect @selectColor="setCustomBadgeColor"/>
+            </v-col>
+            <v-col cols="12" md="3" lg="3">
+              <v-btn
+                color="primary"
+                class="mt-md-1 mt-lg-1"
+              >
+                MAKE
+              </v-btn>
             </v-col>
           </v-row>
         </v-expansion-panel-content>
@@ -34,6 +48,8 @@ export default {
     BadgeColorSelect,
   },
   data: () => ({
+    name: '',
+    logo: '',
     color: '#FFFFFF',
   }),
   methods: {
