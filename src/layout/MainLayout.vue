@@ -84,14 +84,17 @@ export default {
     setBadgeColor(color) {
       this.badgeColor = color;
       this.$refs.selectArea.executeResendCommand();
+      this.$refs.customArea.executeResendCommand();
     },
     setBadgeStyle(style) {
       this.badgeStyle = style;
       this.$refs.selectArea.executeResendCommand();
+      this.$refs.customArea.executeResendCommand();
     },
     setShowLogo(isShow) {
       this.showLogo = isShow;
       this.$refs.selectArea.executeResendCommand();
+      this.$refs.customArea.executeResendCommand();
     }
   }
 }

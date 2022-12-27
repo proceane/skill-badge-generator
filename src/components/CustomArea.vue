@@ -72,12 +72,18 @@ export default {
       if (isValid) {
         this.color = this.color.substring(1) == 'FFFFFF' ? 'blue' : this.color;
         this.skillList.push({"name": this.name, "logo": this.logo, "color": this.color});
-        this.$emit('sendSkillList', {'skill': 'custom', 'skillList': this.skillList});
+        this.onChange();
         this.$refs.form.resetValidation();
       }
     },
     executeResetCommand() {
       this.skillList = [];
+    },
+    onChange() {
+      this.$emit('sendSkillList', {'skill': 'custom', 'skillList': this.skillList});
+    },
+    executeResendCommand() {
+      this.onChange();
     },
   },
 }
