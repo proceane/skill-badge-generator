@@ -3,7 +3,7 @@ const methods = {
     let result = "";
     for (let key in skillList) {
       result += ("<img src=\"https://img.shields.io/badge/"
-      + encodeURIComponent(skillList[key]['skill'])
+      + encodeURIComponent(skillList[key]['name'])
       + "-"
       + (color != 'FFFFFF' ? color : skillList[key]['color'])
       + "?style=" + style 
