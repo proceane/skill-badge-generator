@@ -14,6 +14,7 @@
 
     <MarkdownDialog
       :allSkillList="allSkillList"
+      :customSkillList="customSkillList"
     ></MarkdownDialog>
   </v-row>
 </template>
@@ -32,6 +33,9 @@ export default {
   }),
   props: {
     allSkillList: {
+      type: String
+    },
+    customSkillList: {
       type: String
     },
   },

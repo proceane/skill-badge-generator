@@ -7,6 +7,10 @@
         v-html="allSkillList"
         v-if="allSkillList != null"
       ></div>
+      <div
+        v-html="customSkillList"
+        v-if="customSkillList != null"
+      ></div>
     </v-card-text>
     
   </v-card>
@@ -20,7 +24,10 @@ export default {
   props: {
     allSkillList: {
       type: String
-    }
+    },
+    customSkillList: {
+      type: String
+    },
   },
   methods: {
     

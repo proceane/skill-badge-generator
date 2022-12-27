@@ -4,6 +4,7 @@
       <v-col cols="12" lg="12">
         <ButtonArea 
           :allSkillList="allMarkdownSkillList"
+          :customSkillList="customMarkdownSkillList"
           @executeResetCommand="executeResetCommand"
           @sendBadgeColor="setBadgeColor"
           @sendBadgeStyle="setBadgeStyle"
@@ -21,11 +22,15 @@
           @sendSkillList="sendSkillList"
           ref="selectArea"
         />
-        <CustomArea/>
+        <CustomArea
+          @sendSkillList="sendCustomSkillList"
+          ref="customArea"
+        />
       </v-col>
       <v-col cols="12" lg="5" md="5">
         <PreviewArea 
           :allSkillList="allHtmlSkillList"
+          :customSkillList="customHtmlSkillList"
           ref="previewArea"
         />
       </v-col>
@@ -53,6 +58,8 @@ export default {
   data: () => ({
     allHtmlSkillList: null,
     allMarkdownSkillList: null,
+    customHtmlSkillList: null,
+    customMarkdownSkillList: null,
     badgeColor: 'FFFFFF',
     badgeStyle: 'flat-square',
     showLogo: true,
@@ -62,10 +69,17 @@ export default {
       this.allHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
       this.allMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
     },
+    sendCustomSkillList(value) {
+      this.customHtmlSkillList = listToHtml(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
+      this.customMarkdownSkillList = listToMarkdown(value.skillList, this.badgeColor, this.badgeStyle, this.showLogo);
+    },
     executeResetCommand() {
       this.allHtmlSkillList = null;
       this.allMarkdownSkillList = null;
+      this.customHtmlSkillList = null;
+      this.customMarkdownSkillList = null;
       this.$refs.selectArea.executeResetCommand();
+      this.$refs.customArea.executeResetCommand();
     },
     setBadgeColor(color) {
       this.badgeColor = color;

@@ -31,7 +31,8 @@
               style="width: 100%;"
               ref="markdownText"
             >
-              {{allSkillList}} 
+              {{allSkillList}}
+              {{customSkillList}}
             </code>
           </v-row>
         </v-container>
@@ -59,10 +60,13 @@ export default {
     allSkillList: {
       type: String
     },
+    customSkillList: {
+      type: String
+    },
   },
   computed: {
     existList() {
-      return this.allSkillList != null;
+      return this.allSkillList != null || this.customSkillList != null;
     },
   },
   methods: {

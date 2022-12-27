@@ -22,7 +22,7 @@
                 <v-text-field
                   v-model="logo"
                   label="logo"
-                  hint="https://simpleicons.org/"
+                  hint="https://simpleicons.org"
                   persistent-hint
                   clearable
                 ></v-text-field>
@@ -58,6 +58,7 @@ export default {
     name: '',
     logo: '',
     color: '#FFFFFF',
+    skillList: [],
     rules: {
       required: value => !!value || 'Required.',
     },
@@ -69,10 +70,14 @@ export default {
     sendCustomBadge() {
       const isValid = this.$refs.form.validate();
       if (isValid) {
-        this.$emit("sendBadgeColor", this.color);
-        this.$emit("sendBadgeName", this.name);
-        this.$emit("sendBadgeLogo", this.logo);
+        this.color = this.color.substring(1) == 'FFFFFF' ? 'blue' : this.color;
+        this.skillList.push({"name": this.name, "logo": this.logo, "color": this.color});
+        this.$emit('sendSkillList', {'skill': 'custom', 'skillList': this.skillList});
+        this.$refs.form.resetValidation();
       }
+    },
+    executeResetCommand() {
+      this.skillList = [];
     },
   },
 }
