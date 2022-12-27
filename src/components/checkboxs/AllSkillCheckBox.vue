@@ -2,7 +2,7 @@
   <v-autocomplete
     v-model="skillList"
     :items="allSkillList"
-    item-text="skill"
+    item-text="name"
     return-object
     chips
     label="Skills"
@@ -20,7 +20,7 @@
         text-color="white"
         small
       >
-        {{ data.item.skill }}
+        {{ data.item.name }}
       </v-chip>
     </template>
   </v-autocomplete>
