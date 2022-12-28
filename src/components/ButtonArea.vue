@@ -9,7 +9,10 @@
       @sendBadgeColor="sendBadgeColor"
       @sendBadgeStyle="sendBadgeStyle"
     ></OptionDialog>
-    
+    <div class="text-caption ml-2">
+      No skill in list?
+      <a href="https://github.com/proceane/skill-badge-generator/issues/new/choose" target="_blank">Request in here</a>
+    </div>
     <v-spacer></v-spacer>
 
     <MarkdownDialog

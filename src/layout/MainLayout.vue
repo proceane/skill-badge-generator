@@ -14,10 +14,7 @@
     </v-row>
     <v-row>
       <v-col cols="12" lg="7" md="7">
-        <div class="text-caption ml-2">
-          No skill in list? 
-          <a href="https://github.com/proceane/skill-badge-generator/issues/new/choose" target="_blank">Request in here</a>
-        </div>
+
         <SelectArea
           @sendSkillList="sendSkillList"
           ref="selectArea"
